@@ -1,5 +1,5 @@
 #include "Hooks.h"
-#include "Frostbite.h"
+#include "FB SDK/Frostbite.h"
 
 #include "MinHook.h"
 #pragma comment(lib, "libMinHook.x86.lib")
@@ -63,5 +63,5 @@ void Hooks::Init()
 
   CreateHook("Camera Update", 0x11A4560, hCameraUpdate, (LPVOID*)&oCameraUpdate);
 
-  //oD3D11Present = (tD3D11Present)HookVTableFunction()
+  oD3D11Present = (tD3D11Present)HookVTableFunction((PDWORD*)fb::DxRenderer::Singleton()->pSwapChain, (PBYTE)oD3D11Present, 8);
 }
