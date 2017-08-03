@@ -1,6 +1,6 @@
 #ifndef _WeakTokenHolder_H
 #define _WeakTokenHolder_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 		class WeakTokenHolder

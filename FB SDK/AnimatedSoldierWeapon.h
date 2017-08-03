@@ -1,12 +1,12 @@
 #ifndef _AnimatedSoldierWeapon_H
 #define _AnimatedSoldierWeapon_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/ReplicatedBoolSignal.h"
-#include "FB SDK/AnimatedSoldierWeaponSpeedModule.h"
-#include "FB SDK/AnimatedSoldierWeaponOffsetModule.h"
-#include "FB SDK/AnimatedSoldierWeaponZoomModule.h"
-#include "FB SDK/AnimatedSoldierWeaponSprintModule.h"
-#include "FB SDK/AnimatedSoldierWeaponShootModule.h"
+#include "Frostbite_Classes.h"
+#include "ReplicatedBoolSignal.h"
+#include "AnimatedSoldierWeaponSpeedModule.h"
+#include "AnimatedSoldierWeaponOffsetModule.h"
+#include "AnimatedSoldierWeaponZoomModule.h"
+#include "AnimatedSoldierWeaponSprintModule.h"
+#include "AnimatedSoldierWeaponShootModule.h"
 namespace fb
 {
 	class AnimatedSoldierWeapon

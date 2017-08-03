@@ -1,6 +1,6 @@
 #ifndef _SoldierAimingEnvironment_H
 #define _SoldierAimingEnvironment_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 		class SoldierAimingEnvironment

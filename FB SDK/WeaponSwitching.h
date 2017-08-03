@@ -1,6 +1,6 @@
 #ifndef _WeaponSwitching_H
 #define _WeaponSwitching_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class WeaponSwitching

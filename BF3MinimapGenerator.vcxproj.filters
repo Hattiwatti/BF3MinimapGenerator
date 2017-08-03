@@ -9,14 +9,1375 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
+    <Filter Include="Source Files\Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Camera">
+      <UniqueIdentifier>{df063077-1df7-4db8-81dd-c531a5f992da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{0f35c988-8a46-45a0-b952-6bbcb7bebcab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FB SDK">
+      <UniqueIdentifier>{15f9ce3d-3d77-42c7-9c54-ee17344f9df2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FB SDK\EASTL">
+      <UniqueIdentifier>{a5343e26-2643-437a-b80d-7c5e5756605a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\CameraManager.cpp">
+      <Filter>Source Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Log.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\CameraManager.h">
+      <Filter>Source Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\CameraHelpers.h">
+      <Filter>Source Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Log.h">
+      <Filter>Source Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AimerModifierData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AimingConstraints.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AimingPoseData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AmmunitionDepot.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AnimatedSoldierWeapon.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AnimatedSoldierWeaponOffsetModule.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AnimatedSoldierWeaponShootModule.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AnimatedSoldierWeaponSpeedModule.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AnimatedSoldierWeaponSprintModule.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AnimatedSoldierWeaponZoomModule.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AnimatedWeaponGS.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AnimationConfigurationShootModuleData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ant.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AntRef.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ArrayTypeInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Asset.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AsyncRayCastQueue.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AttributeArgument.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AttributeSpec.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AutoAimData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AxisAlignedBox.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\BitArray.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Blueprint.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\BoneCollisionComponentData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\BoneCollisionData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\BorderInputNode.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\BreathControlData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\BulletEntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CacheData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Camera.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CameraComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CameraContext.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CameraData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CameraManager.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CameraScene.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CameraShakeManager.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterCustomizationComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterCustomizationComponentState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterEntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterPhysicsData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterPhysicsEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterPhysicsEntityCallbacks.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterPhysicsEntityCollisionShapes.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterPhysicsEntityContext.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterPhysicsEntityState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterPoseConstraints.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterPoseData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterStateData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CharacterStatePoseInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClassInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClassT.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Client.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientAimingReplication.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientAnimatedSoldierWeaponHandler.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientAntAnimatableComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientBoneCollisionComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientCallbacks.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientCameraComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientCameraContext.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientCharacterCustomizationComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientCharacterEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientChassisComponentReplicationState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientChassisComponentSimulation.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientControllableEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientDamageGiverInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientDamageInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientEntryComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientEntryComponentSound.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientGameContext.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientGameEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientGameView.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientGameWorld.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientGhostAndNetworkableGameEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientGhostGameEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientHealthStateEntityManager.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientLockingController.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientPartComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientPhysicsEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientPlayer.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientPlayerView.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientProximityHookImpl.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSettings.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSoldierAimingSimulation.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSoldierBodyComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSoldierBoundsChecker.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSoldierBoundsCheckerState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSoldierEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSoldierEntityState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSoldierPrediction.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSoldierReplication.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSoldierSimulation.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSoldierWeapon.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSoldierWeaponsComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSpawnEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSpottingComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSpottingTargetComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientStanceFilterComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientSubView.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientVehicleEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientWeapon.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientWeaponComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientWeaponComponentPrediction.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientWeaponComponentReplication.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientWeaponComponentSimulation.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientWeaponComponentState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientWeaponFiringReplication.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientWeaponFiringReplicationState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ClientWeaponsState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CollisionState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Color32.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CompareParams.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CompareState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Component.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ComponentCollection.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ComponentData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ComponentInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ConstWeakPtr.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ControllableEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ControllableEntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ControllableFinder.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ControlObjectState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CriticalSection.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\CtrRefBase.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\DataBusData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\DataContainer.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\DataContext.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\DebrisManager.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\DebugRender.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Device.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\DxRenderer.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\DxRenderSettings.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\DynamicBitSet.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EA.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\eastl_arena_allocator.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL_Includes.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Entity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntityBus.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntityBusData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntityBusPeer.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntityCollection.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntityCollectionSegment.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntityCreator.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntityEvent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\entitygridqueryjobdata.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntityStuff.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntityUpdateInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntityWorld.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntryComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntryInput.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntryInputActionMap.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntryInputState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EntryInputTranslator.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Enumerations.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EventConnection.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EyePositionCallback.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\FakePhysics.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\FieldAliasEntry.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\FieldInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\FieldInfoImpl.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\FiringDispersion.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\FiringDispersionData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\FiringFunctionData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\FocusPoint.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\FovEffect.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\FreeCamera.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\FreeCameraInput.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Frostbite.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Frostbite_Classes.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Frustum.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\GameContext.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\GameDataContainer.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\GameEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\GameEntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\GameObjectData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\GamePhysicsEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\GamePhysicsEntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\gamerenderer.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\GameTime.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\GameView.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\GameWorld.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Guid.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\havok.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\HavokAsset.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\HavokPhysicsData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\HavokPhysicsManager.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Hook.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\HudData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IClientSoldierHealthModule.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ICompareFilter.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IHavok.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IInputFilter.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IMoving.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\InBitStream.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Input.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\InputAction.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\InputActionMap.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\InputActionMapping.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\InputActionMappingsData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\InputActions.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\InputNode.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IPhantom.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IPhysics.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IPhysicsRayCaster.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IRender.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IResourceObject.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IRotation.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IScreenshotCallback.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ISocket.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\IStateRenderer.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ITypedObject.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ITypedObjectWithRefCount.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Juice.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Keyboard.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\KindOfEntityIterator.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Level.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\LinearTransform.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\LockingController.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\LockingControllerData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\LockingControllerState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\LookConstraintsData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Main.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Mat4.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\MaterialContainerPair.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\MaterialGridData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\MaterialGridManager.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\MaterialInteractionGridRow.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\MaterialRelationPropertyPair.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\MemberInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\MemberInfoFlags.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\MemoryArena.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Mesh.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\MessageListener.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ModuleInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ModuleManager.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\MotionController.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Mouse.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\MovingBodyState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\network.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\NoCaseStringLess.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ObjectBlueprint.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ObjectVariation.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Offsets.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\online.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\OnlineId.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\OutBitStream.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Pad.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Parachute.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PartComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PartComponentData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PhysicsEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PhysicsEntityBase.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PhysicsEntityBaseRayCast.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PhysicsEntityContainer.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PhysicsEntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PhysicsEntityParts.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PhysicsEntityUserData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PhysicsRenderParams.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PickupSettingsData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Plane.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Player.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PlayerData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PlayerManager.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PrefabBlueprint.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ProjectileBlueprint.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ProjectileEntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PropertyConnection.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PropertyModificationListener.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PropertyWriter.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\PropertyWriterBase.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ProximityHook.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ProximityHookImpl.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Quat.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\QuatTransform.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\QueryResult.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Ragdoll.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\RayCastHit.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\RayCastResult.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\RefCountBase.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ReferenceObjectData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\RefillableAmmunitionDepot.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\RenderScreenInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\RenderView.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\RenderViewDesc.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ReplicatedBoolSignal.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Rumble.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SafeQueryResult.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ScissorRect.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Score.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ScreenRenderer.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ScreenshotCroppingParams.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ScreenshotFormat.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ScreenshotModule.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ScreenshotParams.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ScreenshotSource.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ScreenshotStatus.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Server.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SkeletonAsset.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SkeletonCollisionData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Snowroller.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SocketData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierAimAssistData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierAimingEnvironment.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierAimingSimulationData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierBoundsChecker.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierEntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierHealthModuleBinding.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierHealthModuleData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierHealthModuleGS.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierWeaponData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierWeaponsComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SoldierWeaponsComponentData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SpatialEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SpatialEntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SpatialEntityWithBusAndData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SpatialPrefabBlueprint.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SpawnReferenceObjectData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SpeedModifierData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SpottingComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SpottingComponentData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\StanceFilterComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\StanceFilterComponentData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\String.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SubView.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SubWorldData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SupportedShootingCallback.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SupportsWeakPtr.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\System.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\SystemSettings.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\TargetCameraCallback.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\TeamEntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\TeamInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\TerrainEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Test.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\TestDetails.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\TestList.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Timer.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\TntObject.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Tool.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ToolData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\TypeInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\TypeManager.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\UI.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\UpdateInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Vec2.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\vec3.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Vec4.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Vehicle.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\VehicleEntity.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\VehicleNs.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\VeniceClientPlayerExtent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeakTokenHolder.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\Weapon.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponAimingConfigurationModifier.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponAimingSimulationModifier.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponAnimTypeModifier.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponComponent.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponEntityData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponFiring.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponFiringCallbackHandler.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponFiringCallbacks.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponFiringData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponFiringDataModifier.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponFiringEffectsModifier.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponFiringShooter.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponFiringState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponInfo.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponLagEffect.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponMagazineModifier.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponMiscModifierSettings.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponModifier.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponModifierBase.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponModifierData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponName.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponOffsetData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponProjectileModifier.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponShotModifier.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponSoundModifier.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponSpeedData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponsState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\weaponsway.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponSwayCallbackImpl.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponSwitching.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponSwitchingCallbacks.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponSwitchingState.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WeaponZoomModifier.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WorldData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\WorldRenderer.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ZoomLevelData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\ZoomLevelLockData.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\AimAssist.h">
+      <Filter>Header Files\FB SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\algorithm.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\allocator.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\bitset.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\bonus\sort_extra.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\core_allocator_adapter.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\deque.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\EABase\config\eacompiler.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\EABase\config\eacompilertraits.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\EABase\config\eaplatform.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\EABase\eabase.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\EABase\earesult.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\fixed_allocator.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\fixed_hash_map.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\fixed_hash_set.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\fixed_list.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\fixed_map.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\fixed_set.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\fixed_string.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\fixed_substring.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\fixed_vector.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\functional.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\hash_map.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\hash_set.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\heap.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\internal\config.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\internal\eastl_rw.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\internal\fixed_pool.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\internal\generic_iterator.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\internal\hashtable.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\internal\red_black_tree.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\internal\type_compound.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\internal\type_fundamental.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\internal\type_pod.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\internal\type_properties.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\internal\type_transformations.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\iterator.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\list.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\map.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\memory.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\set.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\sort.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\string.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\type_traits.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\utility.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="FB SDK\EASTL\vector.h">
+      <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

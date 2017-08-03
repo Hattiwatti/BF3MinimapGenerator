@@ -1,7 +1,7 @@
 #ifndef _BoneCollisionComponentData_H
 #define _BoneCollisionComponentData_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/ComponentData.h"
+#include "Frostbite_Classes.h"
+#include "ComponentData.h"
 namespace fb
 {
 	class BoneCollisionComponentData

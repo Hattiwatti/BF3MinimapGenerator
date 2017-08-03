@@ -2,12 +2,16 @@
 #include <stdio.h>
 
 HANDLE Log::hstdin, Log::hstdout;
+FILE* Log::pfstdin;
+FILE* Log::pfstdout;
 
 void Log::Init()
 {
   AllocConsole();
-  freopen("CONOUT$", "w", stdout);
-  freopen("CONIN$", "r", stdin);
+  freopen_s(&pfstdout, "CONOUT$", "w", stdout);
+  freopen_s(&pfstdin, "CONIN$", "r", stdin);
+  //freopen("CONOUT$", "w", stdout);
+  //freopen("CONIN$", "r", stdin);
   hstdin = GetStdHandle(STD_INPUT_HANDLE);
   hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
 }

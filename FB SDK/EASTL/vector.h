@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/vector.h
+// vector.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written and maintained by Paul Pedriana.
@@ -66,12 +66,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_VECTOR_H
 
 
-#include "EASTL/Internal/config.h"
-#include "EASTL/allocator.h"
-#include "EASTL/type_traits.h"
-#include "EASTL/iterator.h"
-#include "EASTL/algorithm.h"
-#include "EASTL/memory.h"
+#include "Internal/config.h"
+#include "allocator.h"
+#include "type_traits.h"
+#include "iterator.h"
+#include "algorithm.h"
+#include "memory.h"
 
 #ifdef _MSC_VER
     #pragma warning(push, 0)
@@ -169,7 +169,7 @@ namespace eastl
 
         enum
         {
-            kAlignment       = EASTL_ALIGN_OF(T),
+            kAlignment       = __alignof(T),
             kAlignmentOffset = 0
         };
 

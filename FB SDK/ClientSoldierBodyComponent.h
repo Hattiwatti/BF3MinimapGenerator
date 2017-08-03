@@ -1,6 +1,6 @@
 #ifndef _ClientSoldierBodyComponent_H
 #define _ClientSoldierBodyComponent_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class SoldierBodyComponent // Inherited class at offset 0x10

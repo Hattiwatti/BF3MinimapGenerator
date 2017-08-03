@@ -1,6 +1,6 @@
 #ifndef _OnlineId_H
 #define _OnlineId_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class OnlineId

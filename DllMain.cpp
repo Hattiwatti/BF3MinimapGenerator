@@ -6,10 +6,11 @@
 DWORD WINAPI Initialize(LPVOID arg)
 {
 	g_mainHandle = new Main();
-	HINSTANCE dllInstance = *(HINSTANCE*)arg;
+  HINSTANCE* pDllInstance = static_cast<HINSTANCE*>(arg);
 
-	g_mainHandle->Init(dllInstance);
+	g_mainHandle->Init(*pDllInstance);
 
+  delete pDllInstance;
   delete g_mainHandle;
   g_mainHandle = 0;
 	return 0;
@@ -19,7 +20,7 @@ DWORD WINAPI Initialize(LPVOID arg)
 DWORD WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 {
 	if(dwReason == DLL_PROCESS_ATTACH)
-		CreateThread(0, 0, &Initialize, &hInstance, 0, 0);
+		CreateThread(0, 0, &Initialize, new HINSTANCE(hInstance), 0, 0);
 
 	return 1;
 }

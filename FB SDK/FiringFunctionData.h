@@ -1,9 +1,9 @@
 #ifndef _FiringFunctionData_H
 #define _FiringFunctionData_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/CtrRefBase.h"
-#include "FB SDK/GameDataContainer.h"
-#include "FB SDK/FiringDispersionData.h"
+#include "Frostbite_Classes.h"
+#include "CtrRefBase.h"
+#include "GameDataContainer.h"
+#include "FiringDispersionData.h"
 namespace fb
 {
 

@@ -107,10 +107,10 @@ namespace fb
 				virtual void function21(); //empty
 				virtual void unlockModifiers(const fb::WeaponModifier * wm); //22            // V: 0x60
                 virtual void update(float f, const WeaponSway::SoldierAttributesCallback & scb);//23;      // V: 0x64
-                virtual void getDispersion(D3DXMATRIX &, bool);   // V: 0x68
-                virtual void getRecoil(D3DXMATRIX &, bool);             // V: 0x6C
-                virtual void getCameraRecoil(D3DXMATRIX &);        // V: 0x70
-                virtual void getLag(D3DXMATRIX &, bool);  // V: 0x74
+                virtual void getDispersion(XMMATRIX &, bool);   // V: 0x68
+                virtual void getRecoil(XMMATRIX &, bool);             // V: 0x6C
+                virtual void getCameraRecoil(XMMATRIX &);        // V: 0x70
+                virtual void getLag(XMMATRIX &, bool);  // V: 0x74
                 virtual float getDispersionFactor();           // V: 0x7C
                 virtual float getDispersionAngle();            // V: 0x80
                 virtual float getMinDispersionAngle();    // V: 0x84

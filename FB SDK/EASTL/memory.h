@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/memory.h
+// memory.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written and maintained by Paul Pedriana.
@@ -69,11 +69,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_MEMORY_H
 
 
-#include "EASTL/internal/config.h"
-#include "EASTL/internal/generic_iterator.h"
-#include "EASTL/type_traits.h"
-#include "EASTL/algorithm.h"
-#include "EASTL/allocator.h"
+#include "internal/config.h"
+#include "internal/generic_iterator.h"
+#include "type_traits.h"
+#include "algorithm.h"
+#include "allocator.h"
 
 #ifdef _MSC_VER
     #pragma warning(push, 0)

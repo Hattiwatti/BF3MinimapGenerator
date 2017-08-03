@@ -1,8 +1,8 @@
 #ifndef _Ragdoll_H
 #define _Ragdoll_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/Hook.h"
-#include "FB SDK/ClientComponent.h"
+#include "Frostbite_Classes.h"
+#include "Hook.h"
+#include "ClientComponent.h"
 namespace fb
 {
 	class RagdollCallbackHandler 

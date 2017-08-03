@@ -1,6 +1,6 @@
 #ifndef _CharacterPhysicsEntityState_H
 #define _CharacterPhysicsEntityState_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class CharacterPhysicsEntityState

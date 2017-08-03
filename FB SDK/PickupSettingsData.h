@@ -1,6 +1,6 @@
 #ifndef _PickupSettingsData_H
 #define _PickupSettingsData_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class PickupSettingsData

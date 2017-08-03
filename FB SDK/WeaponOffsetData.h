@@ -1,7 +1,7 @@
 #ifndef _WeaponOffsetData_H
 #define _WeaponOffsetData_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/DataContainer.h"
+#include "Frostbite_Classes.h"
+#include "DataContainer.h"
 namespace fb
 {
 	class WeaponOffsetData

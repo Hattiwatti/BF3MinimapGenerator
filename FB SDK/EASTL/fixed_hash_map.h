@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/fixed_hash_map.h
+// fixed_hash_map.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written and maintained by Paul Pedriana.
@@ -44,8 +44,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_FIXED_HASH_MAP_H
 
 
-#include "EASTL/hash_map.h"
-#include "EASTL/internal/fixed_pool.h"
+#include "hash_map.h"
+#include "internal/fixed_pool.h"
 
 
 namespace eastl

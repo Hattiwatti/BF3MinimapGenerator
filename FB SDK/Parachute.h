@@ -1,6 +1,6 @@
 #ifndef _Parachute_H
 #define _Parachute_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 		class SoldierParachuteGS

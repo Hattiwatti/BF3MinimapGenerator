@@ -1,7 +1,7 @@
 #ifndef _WeaponProjectileModifier_H
 #define _WeaponProjectileModifier_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/WeaponModifierBase.h"
+#include "Frostbite_Classes.h"
+#include "WeaponModifierBase.h"
 namespace fb
 {
 	class WeaponProjectileModifier

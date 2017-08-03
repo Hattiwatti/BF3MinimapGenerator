@@ -1,6 +1,6 @@
 #ifndef _SkeletonAsset_H
 #define _SkeletonAsset_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class SkeletonAsset

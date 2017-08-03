@@ -1,6 +1,6 @@
 #ifndef _AimingPoseData_H
 #define _AimingPoseData_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class AimingPoseData

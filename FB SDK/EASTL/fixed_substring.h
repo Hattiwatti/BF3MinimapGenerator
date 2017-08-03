@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/fixed_substring.h
+// fixed_substring.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written and maintained by Paul Pedriana.
@@ -38,7 +38,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_FIXED_SUBSTRING_H
 
 
-#include "EASTL/string.h"
+#include "string.h"
 
 
 namespace eastl

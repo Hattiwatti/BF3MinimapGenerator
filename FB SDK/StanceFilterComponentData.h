@@ -1,6 +1,6 @@
 #ifndef _StanceFilterComponentData_H
 #define _StanceFilterComponentData_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class StanceFilterComponentData

@@ -1,7 +1,7 @@
 #ifndef _ClientGameContext_H
 #define _ClientGameContext_H
 
-#include "FB SDK/GameContext.h"
+#include "GameContext.h"
 
 namespace fb
 {
@@ -18,7 +18,7 @@ namespace fb
 	public:
 		static ClientGameContext* Singleton()
 		{
-			return *(ClientGameContext**)(CLIENTGAMECONTEXT);
+			return *(ClientGameContext**)(0x02380B58);
 		}
 	}; // 0x34
 

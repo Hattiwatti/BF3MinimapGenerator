@@ -1,6 +1,6 @@
 #ifndef _PhysicsEntityContainer_H
 #define _PhysicsEntityContainer_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class PhysicsEntityContainer

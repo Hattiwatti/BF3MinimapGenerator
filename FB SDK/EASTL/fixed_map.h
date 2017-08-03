@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/fixed_map.h
+// fixed_map.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written by Paul Pedriana.
@@ -44,8 +44,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_FIXED_MAP_H
 
 
-#include "EASTL/map.h"
-#include "EASTL/fixed_set.h" // Included because fixed_rbtree_base resides here.
+#include "map.h"
+#include "fixed_set.h" // Included because fixed_rbtree_base resides here.
 
 
 namespace eastl

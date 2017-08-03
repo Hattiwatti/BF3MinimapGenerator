@@ -1,9 +1,9 @@
 #ifndef _MESH_H
 #define _MESH_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/RefCountBase.h"
-#include "FB SDK/Guid.h"
-#include "FB SDK/ArrayTypeInfo.h"
+#include "Frostbite_Classes.h"
+#include "RefCountBase.h"
+#include "Guid.h"
+#include "ArrayTypeInfo.h"
 
 namespace fb
 {

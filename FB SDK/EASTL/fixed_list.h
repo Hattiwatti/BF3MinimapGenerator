@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/fixed_list.h
+// fixed_list.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written and maintained by Paul Pedriana.
@@ -43,9 +43,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_FIXED_LIST_H
 
 
-#include "EASTL/list.h"
-#include "EASTL/internal/fixed_pool.h"
-#include "EASTL/sort.h"
+#include "list.h"
+#include "internal/fixed_pool.h"
+#include "sort.h"
 
 
 namespace eastl

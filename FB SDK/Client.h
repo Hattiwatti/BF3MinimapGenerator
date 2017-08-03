@@ -2,7 +2,7 @@
 #define _Client_H
 
 
-#include "FB SDK/ClientCallbacks.h"
+#include "ClientCallbacks.h"
 
 namespace fb
 {

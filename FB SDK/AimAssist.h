@@ -1,7 +1,7 @@
 #ifndef _AimAssist_H
 #define _AimAssist_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/AimingConstraints.h"
+#include "Frostbite_Classes.h"
+#include "AimingConstraints.h"
 namespace fb
 {
 	class AimAssist

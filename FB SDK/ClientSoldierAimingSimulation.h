@@ -1,8 +1,8 @@
 #ifndef _ClientSoldierAimingSimulation_H
 #define _ClientSoldierAimingSimulation_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/SoldierAimingSimulationData.h"
-#include "FB SDK/AimAssist.h"
+#include "Frostbite_Classes.h"
+#include "SoldierAimingSimulationData.h"
+#include "AimAssist.h"
 namespace fb
 {
 	class ClientSoldierAimingSimulation

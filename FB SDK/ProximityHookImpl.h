@@ -1,8 +1,8 @@
 #ifndef _ProximityHookImpl_H
 #define _ProximityHookImpl_H
 #include "Frostbite_Classes.h"
-#include "FB SDK/ProximityHook.h"
-#include "FB SDK/RayCastResult.h"
+#include "ProximityHook.h"
+#include "RayCastResult.h"
 namespace fb
 {
 	class ProximityHookImpl

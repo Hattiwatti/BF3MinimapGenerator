@@ -1,8 +1,8 @@
 #ifndef _ClientWeaponComponentPrediction_H
 #define _ClientWeaponComponentPrediction_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/ClientWeaponComponentSimulation.h"
-#include "FB SDK/WeaponFiringState.h"
+#include "Frostbite_Classes.h"
+#include "ClientWeaponComponentSimulation.h"
+#include "WeaponFiringState.h"
 namespace fb
 {
 	class ClientWeaponComponentPrediction

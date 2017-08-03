@@ -1,7 +1,7 @@
 #ifndef _WeaponEntityData_H
 #define _WeaponEntityData_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/WeaponName.h"
+#include "Frostbite_Classes.h"
+#include "WeaponName.h"
 namespace fb
 {
 	class WeaponEntityData

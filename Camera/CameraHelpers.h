@@ -1,10 +1,11 @@
 #pragma once
-#include "../Frostbite.h"
+#include <Windows.h>
+#include <DirectXMath.h>
 
 struct GamepadState
 {
-  XMFLOAT2 leftStick;
-  XMFLOAT2 rightStick;
+  DirectX::XMFLOAT2 leftStick;
+  DirectX::XMFLOAT2 rightStick;
   double trigger;
   BYTE LeftShoulder;
   BYTE RightShoulder;
@@ -32,5 +33,5 @@ struct Camera
   float rotationSpeed{ 1.0f };
   float rollSpeed{ 0.2f };
 
-  XMMATRIX finalMatrix{ XMMatrixIdentity() };
+  DirectX::XMFLOAT4X4 finalMatrix;
 };

@@ -1,7 +1,7 @@
 #ifndef _ClientWeaponsState_H
 #define _ClientWeaponsState_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/WeaponsState.h"
+#include "Frostbite_Classes.h"
+#include "WeaponsState.h"
 namespace fb
 {
 	

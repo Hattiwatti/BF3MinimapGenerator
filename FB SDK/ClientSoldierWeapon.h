@@ -1,10 +1,10 @@
 #ifndef _ClientSoldierWeapon_H
 #define _ClientSoldierWeapon_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/ClientGameEntity.h"
-#include "FB SDK/WeaponLagEffect.h"
-#include "FB SDK/WeaponModifier.h"
-#include "FB SDK/WeaponFiringCallbacks.h"
+#include "Frostbite_Classes.h"
+#include "ClientGameEntity.h"
+#include "WeaponLagEffect.h"
+#include "WeaponModifier.h"
+#include "WeaponFiringCallbacks.h"
 
 namespace fb
 {

@@ -1,6 +1,6 @@
 #ifndef _CharacterPhysicsEntityCollisionShapes_H
 #define _CharacterPhysicsEntityCollisionShapes_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class CharacterPhysicsEntityCollisionShapes

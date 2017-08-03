@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/utility.h
+// utility.h
 // Written and maintained by Paul Pedriana - 2005.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -37,7 +37,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_UTILITY_H
 
 
-#include "EASTL/internal/config.h"
+#include "internal/config.h"
 
 
 #ifdef _MSC_VER

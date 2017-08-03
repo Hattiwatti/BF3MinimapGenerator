@@ -1,7 +1,7 @@
 #ifndef _SoldierHealthModuleBinding_H
 #define _SoldierHealthModuleBinding_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/AntRef.h"
+#include "Frostbite_Classes.h"
+#include "AntRef.h"
 namespace fb
 {
 	class SoldierHealthModuleBinding

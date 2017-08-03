@@ -43,7 +43,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_CORE_ALLOCATOR_ADAPTER_H
 
 
-#include "EASTL/allocator.h"
+#include "allocator.h"
 
 
 namespace EA

@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/fixed_hash_set.h
+// fixed_hash_set.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written and maintained by Paul Pedriana.
@@ -44,8 +44,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_FIXED_HASH_SET_H
 
 
-#include "EASTL/hash_set.h"
-#include "EASTL/internal/fixed_pool.h"
+#include "hash_set.h"
+#include "internal/fixed_pool.h"
 
 
 

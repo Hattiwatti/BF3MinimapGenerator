@@ -6,9 +6,8 @@
 
 #include <Windows.h>
 #include <d3d11.h>
-#include <d3dx11.h>
 
-typedef D3DXVECTOR4 hkVector4;
+typedef XMFLOAT4 hkVector4;
 
 template <class T>
 class hkArray

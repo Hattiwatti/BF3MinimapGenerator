@@ -1,6 +1,6 @@
 #ifndef _HudData_H
 #define _HudData_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class HudData

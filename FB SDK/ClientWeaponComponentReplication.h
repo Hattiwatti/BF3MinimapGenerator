@@ -1,6 +1,6 @@
 #ifndef _ClientWeaponComponentReplication_H
 #define _ClientWeaponComponentReplication_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class ClientWeaponComponentReplication

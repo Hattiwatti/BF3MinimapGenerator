@@ -1,7 +1,7 @@
 #ifndef _WeaponAnimTypeModifier_H
 #define _WeaponAnimTypeModifier_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/WeaponModifierBase.h"
+#include "Frostbite_Classes.h"
+#include "WeaponModifierBase.h"
 namespace fb
 {
 		class WeaponAnimTypeModifier

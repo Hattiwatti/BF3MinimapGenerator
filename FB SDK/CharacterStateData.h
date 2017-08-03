@@ -1,6 +1,6 @@
 #ifndef _CharacterStateData_H
 #define _CharacterStateData_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	

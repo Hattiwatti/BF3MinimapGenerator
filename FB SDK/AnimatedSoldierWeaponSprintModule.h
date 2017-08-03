@@ -1,6 +1,6 @@
 #ifndef _AnimatedSoldierWeaponSprintModule_H
 #define _AnimatedSoldierWeaponSprintModule_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class AnimatedSoldierWeaponSprintModule

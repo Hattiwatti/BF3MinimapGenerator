@@ -1,6 +1,6 @@
 #ifndef _SafeQueryResult_H
 #define _SafeQueryResult_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	cclass SafeQueryResult

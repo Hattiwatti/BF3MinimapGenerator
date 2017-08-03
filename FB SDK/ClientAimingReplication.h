@@ -1,6 +1,6 @@
 #ifndef _ClientAimingReplication_H
 #define _ClientAimingReplication_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class ClientAimingReplication

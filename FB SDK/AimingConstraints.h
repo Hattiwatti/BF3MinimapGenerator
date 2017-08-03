@@ -1,6 +1,6 @@
 #ifndef _AimingConstraints_H
 #define _AimingConstraints_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class AimingConstraints

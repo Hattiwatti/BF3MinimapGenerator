@@ -1,6 +1,6 @@
 #ifndef _StanceFilterComponent_H
 #define _StanceFilterComponent_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class StanceFilterComponent // Inherited class at offset 0x10

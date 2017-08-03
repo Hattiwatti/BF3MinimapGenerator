@@ -1,7 +1,7 @@
 #ifndef _SoldierWeaponsComponent_H
 #define _SoldierWeaponsComponent_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/SoldierWeaponsComponentData.h"
+#include "Frostbite_Classes.h"
+#include "SoldierWeaponsComponentData.h"
 namespace fb
 {
 	

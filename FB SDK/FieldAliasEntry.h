@@ -1,6 +1,6 @@
 #ifndef _FieldAliasEntry_H
 #define _FieldAliasEntry_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class FieldAliasEntry

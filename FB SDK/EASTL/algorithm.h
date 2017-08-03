@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/algorithm.h
+// algorithm.h
 //
 // Written and maintained by Paul Pedriana - 2005.
 ///////////////////////////////////////////////////////////////////////////////
@@ -105,12 +105,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_ALGORITHM_H
 
 
-#include "EASTL/internal/config.h"
-#include "EASTL/utility.h"
-#include "EASTL/iterator.h"
-#include "EASTL/functional.h"
-#include "EASTL/internal/generic_iterator.h"
-#include "EASTL/type_traits.h"
+#include "internal/config.h"
+#include "utility.h"
+#include "iterator.h"
+#include "functional.h"
+#include "internal/generic_iterator.h"
+#include "type_traits.h"
 
 #ifdef _MSC_VER
     #pragma warning(push, 0)

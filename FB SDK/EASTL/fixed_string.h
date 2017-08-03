@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/fixed_string.h
+// fixed_string.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written and maintained by Paul Pedriana.
@@ -45,12 +45,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_FIXED_STRING_H
 
 
-#include "EASTL/internal/config.h"
+#include "internal/config.h"
 #if EASTL_ABSTRACT_STRING_ENABLED
-    #include "EASTL/bonus/fixed_string_abstract.h"
+    #include "bonus/fixed_string_abstract.h"
 #else // 'else' encompasses the entire rest of this file.
-#include "EASTL/string.h"
-#include "EASTL/internal/fixed_pool.h"
+#include "string.h"
+#include "internal/fixed_pool.h"
 
 
 

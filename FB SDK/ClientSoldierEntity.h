@@ -118,9 +118,9 @@ namespace fb
         Vec3 m_lastAnimFramePos;										// 0x300
         FLOAT m_orderStatusTime;										// 0x310
         FLOAT m_targetTime;												// 0x314
-        eastl::vector<BoneFakePhysics> m_fakePhysics;					// 0x318
+        eastl::vector<DWORD> m_fakePhysics;					// 0x318
         FLOAT m_aiDamageHumanCooldown;									// 0x328
-        FLOAT m_speedPenaltyOnDamageTimer;								// 0x32C
+        //FLOAT m_speedPenaltyOnDamageTimer;								// 0x32C
         FLOAT m_speedPenaltyOnDamage;									// 0x330
 		ClientProximityHookImpl* m_proximityHook;						// 0x334
 		ClientSoldierEntity::OrientationCallback *m_orientationCallback;// 0x338

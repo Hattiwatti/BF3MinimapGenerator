@@ -2,8 +2,8 @@
 #define _VehicleNs_H
 
 
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/ArrayTypeInfo.h"
+#include "Frostbite_Classes.h"
+#include "ArrayTypeInfo.h"
 
 namespace fb
 {

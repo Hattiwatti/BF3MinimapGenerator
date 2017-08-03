@@ -1,6 +1,6 @@
 #ifndef _LockingControllerData_H
 #define _LockingControllerData_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 		class LockingControllerData

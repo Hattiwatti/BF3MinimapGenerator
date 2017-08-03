@@ -1,7 +1,7 @@
 #ifndef _DxRenderer_H
 #define _DxRenderer_H
-#include "FB SDK/DxRenderSettings.h"
-#include "FB SDK/RenderScreenInfo.h"
+#include "DxRenderSettings.h"
+#include "RenderScreenInfo.h"
 namespace fb
 {
 
@@ -32,7 +32,7 @@ namespace fb
 	public:
 		static DxRenderer* Singleton()
 		{
-			return *(DxRenderer**)DXRENDERER;
+			return *(DxRenderer**)0x023577D4;
 		}
 	};
 

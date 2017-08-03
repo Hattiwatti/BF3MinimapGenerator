@@ -1,9 +1,9 @@
 #ifndef _WeaponInfo_H
 #define _WeaponInfo_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/EntryComponent.h"
-#include "FB SDK/ClientWeaponComponentPrediction.h"
-#include "FB SDK/ClientWeaponComponentReplication.h"
+#include "Frostbite_Classes.h"
+#include "EntryComponent.h"
+#include "ClientWeaponComponentPrediction.h"
+#include "ClientWeaponComponentReplication.h"
 namespace fb
 {
 		class WeaponInfo

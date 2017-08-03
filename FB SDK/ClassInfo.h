@@ -1,7 +1,7 @@
 #ifndef _ClassInfo_H
 #define _ClassInfo_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/TypeInfo.h"
+#include "Frostbite_Classes.h"
+#include "TypeInfo.h"
 namespace fb
 {
 	

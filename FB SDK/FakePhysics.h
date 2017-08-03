@@ -1,6 +1,6 @@
 #ifndef _FakePhysics_H
 #define _FakePhysics_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class FakePhysicsData

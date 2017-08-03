@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/list.h
+// list.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written and maintained by Paul Pedriana.
@@ -66,11 +66,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_LIST_H
 
 
-#include "EASTL/internal/config.h"
-#include "EASTL/allocator.h"
-#include "EASTL/type_traits.h"
-#include "EASTL/iterator.h"
-#include "EASTL/algorithm.h"
+#include "internal/config.h"
+#include "allocator.h"
+#include "type_traits.h"
+#include "iterator.h"
+#include "algorithm.h"
 
 #ifdef _MSC_VER
     #pragma warning(push, 0)

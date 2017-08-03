@@ -1,6 +1,6 @@
 #ifndef _TypeManager__H
 #define _TypeManager__H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class TypeManager

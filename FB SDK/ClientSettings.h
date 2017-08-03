@@ -1,7 +1,7 @@
 #ifndef _ClientSettings_H
 #define _ClientSettings_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/SystemSettings.h"
+#include "Frostbite_Classes.h"
+#include "SystemSettings.h"
 namespace fb
 {
 	

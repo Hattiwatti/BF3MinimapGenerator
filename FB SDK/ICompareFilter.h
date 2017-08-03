@@ -1,8 +1,8 @@
 #ifndef _ICompareFilter_H
 #define _ICompareFilter_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/TypeInfo.h"
-#include "FB SDK/FieldInfo.h"
+#include "Frostbite_Classes.h"
+#include "TypeInfo.h"
+#include "FieldInfo.h"
 namespace fb
 {
 	

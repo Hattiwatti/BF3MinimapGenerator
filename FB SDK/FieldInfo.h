@@ -1,7 +1,7 @@
 #ifndef _FieldInfo_H
 #define _FieldInfo_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/MemberInfoFlags.h"
+#include "Frostbite_Classes.h"
+#include "MemberInfoFlags.h"
 namespace fb
 {
 	class FieldInfo

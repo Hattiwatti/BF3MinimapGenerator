@@ -1,6 +1,6 @@
 #ifndef _WeaponLagEffect_H
 #define _WeaponLagEffect_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	//new class

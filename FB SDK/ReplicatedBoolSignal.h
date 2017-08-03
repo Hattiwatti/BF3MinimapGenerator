@@ -1,6 +1,6 @@
 #ifndef _ReplicatedBoolSignal_H
 #define _ReplicatedBoolSignal_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class ReplicatedBoolSignal

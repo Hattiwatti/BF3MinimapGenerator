@@ -1,7 +1,7 @@
 #ifndef _RenderView_H
 #define _RenderView_H
-#include "FB SDK/RenderViewDesc.h"
-#include "FB SDK/DxRenderer.h"
+#include "RenderViewDesc.h"
+#include "DxRenderer.h"
 
 namespace fb
 {

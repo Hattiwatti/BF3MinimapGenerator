@@ -1,7 +1,7 @@
 #ifndef _ZoomLevelData_H
 #define _ZoomLevelData_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/DataContainer.h"
+#include "Frostbite_Classes.h"
+#include "DataContainer.h"
 namespace fb
 {
 	class ZoomLevelData

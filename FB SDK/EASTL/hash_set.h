@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/hash_set.h
+// hash_set.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written and maintained by Paul Pedriana.
@@ -46,10 +46,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_HASH_SET_H
 
 
-#include "EASTL/internal/config.h"
-#include "EASTL/internal/hashtable.h"
-#include "EASTL/functional.h"
-#include "EASTL/utility.h"
+#include "internal/config.h"
+#include "internal/hashtable.h"
+#include "functional.h"
+#include "utility.h"
 
 
 

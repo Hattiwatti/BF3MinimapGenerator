@@ -1,6 +1,6 @@
 #ifndef _AimerModifierData_H
 #define _AimerModifierData_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class AimerModifierData

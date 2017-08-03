@@ -1,6 +1,6 @@
 #ifndef _MemberInfo_H
 #define _MemberInfo_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 		class MemberInfo // Inherited class at offset 0x0

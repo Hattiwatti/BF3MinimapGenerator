@@ -1,7 +1,7 @@
 #ifndef _TestList_H
 #define _TestList_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/Test.h"
+#include "Frostbite_Classes.h"
+#include "Test.h"
 namespace fb
 {
 	class TestList

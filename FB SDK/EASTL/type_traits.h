@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/type_traits.h
+// type_traits.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written and maintained by Paul Pedriana.
@@ -181,7 +181,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 
-#include "EASTL/internal/config.h"
+#include "internal/config.h"
 #include <stddef.h>                 // Is needed for size_t usage by some traits.
 
 
@@ -321,17 +321,17 @@ namespace eastl
 
 // The following files implement the type traits themselves.
 #if defined(__GNUC__) && (__GNUC__ <= 2)
-    #include <EASTL/internal/compat/type_fundamental.h>
-    #include <EASTL/internal/compat/type_transformations.h>
-    #include <EASTL/internal/compat/type_properties.h>
-    #include <EASTL/internal/compat/type_compound.h>
-    #include <EASTL/internal/compat/type_pod.h>
+    #include <internal/compat/type_fundamental.h>
+    #include <internal/compat/type_transformations.h>
+    #include <internal/compat/type_properties.h>
+    #include <internal/compat/type_compound.h>
+    #include <internal/compat/type_pod.h>
 #else
-    #include "EASTL/internal/type_fundamental.h"
-    #include "EASTL/internal/type_transformations.h"
-    #include "EASTL/internal/type_properties.h"
-    #include "EASTL/internal/type_compound.h"
-    #include "EASTL/internal/type_pod.h"
+    #include "internal/type_fundamental.h"
+    #include "internal/type_transformations.h"
+    #include "internal/type_properties.h"
+    #include "internal/type_compound.h"
+    #include "internal/type_pod.h"
 #endif
 
 

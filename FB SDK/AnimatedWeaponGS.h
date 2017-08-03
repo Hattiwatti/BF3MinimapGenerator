@@ -1,6 +1,6 @@
 #ifndef _AnimatedWeaponGS_H
 #define _AnimatedWeaponGS_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class AnimatedWeaponGS

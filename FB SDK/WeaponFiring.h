@@ -1,9 +1,9 @@
 #ifndef _WeaponFiring_H
 #define _WeaponFiring_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/WeaponFiringCallbackHandler.h"
-#include "FB SDK/RefillableAmmunitionDepot.h"
-#include "FB SDK/FiringFunctionData.h"
+#include "Frostbite_Classes.h"
+#include "WeaponFiringCallbackHandler.h"
+#include "RefillableAmmunitionDepot.h"
+#include "FiringFunctionData.h"
 namespace fb
 {
 	

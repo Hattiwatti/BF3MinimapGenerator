@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/map.h
+// map.h
 //
 // Copyright (c) 2005, Electronic Arts. All rights reserved.
 // Written by Paul Pedriana.
@@ -40,10 +40,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 
-#include "EASTL/internal/config.h"
-#include "EASTL/internal/red_black_tree.h"
-#include "EASTL/functional.h"
-#include "EASTL/utility.h"
+#include "internal/config.h"
+#include "internal/red_black_tree.h"
+#include "functional.h"
+#include "utility.h"
 
 
 

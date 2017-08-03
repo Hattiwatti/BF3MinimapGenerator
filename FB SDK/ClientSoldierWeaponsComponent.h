@@ -1,12 +1,12 @@
 #ifndef _ClientSoldierWeaponsComponent_H
 #define _ClientSoldierWeaponsComponent_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/WeaponSwayCallbackImpl.h"
-#include "FB SDK/AnimatedWeaponGS.h"
-#include "FB SDK/ClientWeaponsState.h"
-#include "FB SDK/SoldierWeaponsComponent.h"
-#include "FB SDK/WeaponSwitchingCallbacks.h"
-#include "FB SDK/WeaponSwitchingState.h"
+#include "Frostbite_Classes.h"
+#include "WeaponSwayCallbackImpl.h"
+#include "AnimatedWeaponGS.h"
+#include "ClientWeaponsState.h"
+#include "SoldierWeaponsComponent.h"
+#include "WeaponSwitchingCallbacks.h"
+#include "WeaponSwitchingState.h"
 namespace fb
 {
 	class ClientSoldierWeaponsComponent

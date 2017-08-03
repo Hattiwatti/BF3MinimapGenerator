@@ -1,6 +1,6 @@
 #ifndef _MemberInfoFlags_H
 #define _MemberInfoFlags_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class MemberInfoFlags

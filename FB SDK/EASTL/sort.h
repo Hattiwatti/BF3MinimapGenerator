@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/sort.h
+// sort.h
 // Written by Paul Pedriana - 2005.
 //////////////////////////////////////////////////////////////////////////////
 
@@ -68,14 +68,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 
-#include "EASTL/internal/config.h"
-#include "EASTL/iterator.h"
-#include "EASTL/memory.h"
-#include "EASTL/algorithm.h"
-#include "EASTL/functional.h"
-#include "EASTL/heap.h"
-#include "EASTL/allocator.h"
-#include "EASTL/memory.h"
+#include "internal/config.h"
+#include "iterator.h"
+#include "memory.h"
+#include "algorithm.h"
+#include "functional.h"
+#include "heap.h"
+#include "allocator.h"
+#include "memory.h"
 
 
 

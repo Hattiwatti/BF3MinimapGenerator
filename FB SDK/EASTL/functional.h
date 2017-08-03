@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/functional.h
+// functional.h
 // Written and maintained by Paul Pedriana - 2005
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -36,8 +36,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_FUNCTIONAL_H
 
 
-#include "EASTL/internal/config.h"
-#include "EASTL/type_traits.h"
+#include "internal/config.h"
+#include "type_traits.h"
 
 
 namespace eastl

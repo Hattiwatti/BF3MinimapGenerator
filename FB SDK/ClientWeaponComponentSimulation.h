@@ -1,6 +1,6 @@
 #ifndef _ClientWeaponComponentSimulation_H
 #define _ClientWeaponComponentSimulation_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 		class ClientWeaponComponentSimulation // Inherited class at offset 0x0

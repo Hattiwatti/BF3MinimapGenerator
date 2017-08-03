@@ -1,9 +1,9 @@
 #ifndef _ClientWeapon_H
 #define _ClientWeapon_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/Weapon.h"
-#include "FB SDK/WeaponFiringCallbackHandler.h"
-#include "FB SDK/ControllableFinder.h"
+#include "Frostbite_Classes.h"
+#include "Weapon.h"
+#include "WeaponFiringCallbackHandler.h"
+#include "ControllableFinder.h"
 namespace fb
 {
 	

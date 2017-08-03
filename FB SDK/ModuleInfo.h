@@ -1,6 +1,6 @@
 #ifndef _ModuleInfo_H
 #define _ModuleInfo_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class ModuleInfo

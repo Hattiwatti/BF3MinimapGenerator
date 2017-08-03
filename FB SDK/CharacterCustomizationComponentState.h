@@ -1,6 +1,6 @@
 #ifndef _CharacterCustomizationComponentState_H
 #define _CharacterCustomizationComponentState_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 		class CharacterCustomizationComponentState

@@ -1,6 +1,6 @@
 #ifndef _SoldierHealthModuleGS_H
 #define _SoldierHealthModuleGS_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class SoldierHealthModuleGS

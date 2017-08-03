@@ -1,6 +1,6 @@
 #ifndef _Guid_H
 #define _Guid_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class Guid

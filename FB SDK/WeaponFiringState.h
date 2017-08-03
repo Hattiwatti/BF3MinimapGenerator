@@ -1,6 +1,6 @@
 #ifndef _WeaponFiringState_H
 #define _WeaponFiringState_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class WeaponFiringState

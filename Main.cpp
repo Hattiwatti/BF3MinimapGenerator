@@ -1,11 +1,19 @@
 #include "Main.h"
 #include "Hooks.h"
+#include "Util/Log.h"
 
+
+//
+// Initializes everything and starts up
+// the update loop
+//
 void Main::Init(HINSTANCE dllHandle)
 {
 	m_dllHandle = dllHandle;
+  Log::Init();
 
-	m_pCameraManager = std::make_unique<CameraManager>();
+  m_pCameraManager = new CameraManager();
+  Log::Write("m_pCameraManager 0x%I64X", m_pCameraManager);
 
   Hooks::Init();
 
@@ -13,6 +21,17 @@ void Main::Init(HINSTANCE dllHandle)
 	while (!m_exit)
 		Update();
 }
+
+//
+// Updates all objects
+// TODO: Add boost clock for delta time
+//
+void Main::Update()
+{
+  m_pCameraManager->Update(0);
+  Sleep(1);
+}
+
 
 Main::Main()
 { }
@@ -22,5 +41,5 @@ Main::~Main()
   Hooks::RemoveHooks();
 
 	m_dllHandle = 0;
-  delete m_pCameraManager.release();
+  delete m_pCameraManager;
 }

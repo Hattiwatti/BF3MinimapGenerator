@@ -1,7 +1,7 @@
 #ifndef _KindOfEntityIterator_H
 #define _KindOfEntityIterator_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/EntityWorld.h"
+#include "Frostbite_Classes.h"
+#include "EntityWorld.h"
 namespace fb
 {
 	template<typename T> struct KindOfEntityIterator 

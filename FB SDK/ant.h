@@ -53,7 +53,7 @@ namespace ant
 		public:
 			fb::QuatTransform * m_localTransforms;                     // this+0x0
 			fb::QuatTransform * m_worldTransforms;                     // this+0x4
-			LPD3DXMATRIX  m_renderTransforms;                     // this+0x8
+      XMMATRIX*  m_renderTransforms;                     // this+0x8
 			fb::QuatTransform * m_interpolatedLocalTransforms;                     // this+0xC
 			fb::QuatTransform * m_interpolatedWorldTransforms;                     // this+0x10
 			fb::QuatTransform * m_activeWorldTransforms;                     // this+0x14
@@ -149,7 +149,7 @@ namespace ant
 			public:
 				fb::QuatTransform* m_localTransforms;				// 0x00
 				fb::QuatTransform* m_worldTransforms;				// 0x04
-				LPD3DXMATRIX m_renderTransforms;				// 0x08
+        XMMATRIX* m_renderTransforms;				// 0x08
 				fb::QuatTransform* m_interpolatedWorldTransforms;	// 0x0C
 				fb::QuatTransform* m_interpolatedLocalTransforms;	// 0x10
 				fb::QuatTransform* m_targetLocalTransforms;			// 0x14

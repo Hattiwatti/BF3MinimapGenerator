@@ -1,7 +1,7 @@
 #ifndef _SoldierAimAssistData_H
 #define _SoldierAimAssistData_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/GameDataContainer.h"
+#include "Frostbite_Classes.h"
+#include "GameDataContainer.h"
 namespace fb
 {
 	

@@ -1,6 +1,6 @@
 #ifndef _EntityGridQueryJobData_H
 #define _EntityGridQueryJobData_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class EntityGridQueryJobData
@@ -32,8 +32,9 @@ namespace fb
 			 DontCheckMaterials,                    // constant 0x40
 		}; // <unnamed-tag>
 
-		/*union __m128*/LPD3DXMATRIX center;        // 0x0
-		/*union __m128*/LPD3DXMATRIX radius;        // 0x10
+		XMMATRIX* center;        // 0x0
+    BYTE Pad004[0xC];
+    XMMATRIX* radius;        // 0x10
 		EntityGridQueryJobData::QueryType queryType;// 0x20
 		EntityGridQueryJobData::QueryDetail queryDetail;// 0x24
 		int maxQueryResult;                      // 0x28

@@ -1,6 +1,6 @@
 #ifndef _WeaponFiringCallbacks_H
 #define _WeaponFiringCallbacks_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	

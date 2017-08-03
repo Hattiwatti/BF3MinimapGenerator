@@ -1,6 +1,6 @@
 #ifndef _AnimatedSoldierWeaponSpeedModule_H
 #define _AnimatedSoldierWeaponSpeedModule_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	

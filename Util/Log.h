@@ -1,5 +1,6 @@
 #pragma once
 #include <Windows.h>
+#include <stdio.h>
 
 class Log
 {
@@ -14,4 +15,6 @@ public:
 private:
   static HANDLE hstdin;
   static HANDLE hstdout;
+  static FILE* pfstdout;
+  static FILE* pfstdin;
 };

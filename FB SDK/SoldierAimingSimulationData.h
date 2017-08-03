@@ -1,8 +1,8 @@
 #ifndef _SoldierAimingSimulationData_H
 #define _SoldierAimingSimulationData_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/ZoomLevelData.h"
-#include "FB SDK/AimingPoseData.h"
+#include "Frostbite_Classes.h"
+#include "ZoomLevelData.h"
+#include "AimingPoseData.h"
 namespace fb
 {
 		class SoldierAimingSimulationData

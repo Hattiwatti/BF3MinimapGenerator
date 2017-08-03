@@ -20,10 +20,7 @@ namespace fb
 			};
 			FLOAT data[4];
 		};
-		void print(char* pthis)
-		{
-			LOG.Write("%s Vec3 at 0x%.8X: (%5.1f|%5.1f|%5.1f)\n",pthis,this,x,y,z);
-		}
+
 		float len(void)
 		{
 			return sqrt(x*x+y*y+z*z);
@@ -94,23 +91,6 @@ namespace fb
 			Distance.z = other.z - this->z;
             return sqrt( ( Distance.x * Distance.x ) + ( Distance.y * Distance.y ) + ( Distance.z * Distance.z ) );
         }
-
-		Vec3 TransferFromD3DXVECTOR3 ( D3DXVECTOR3 const &other )
-		{
-			this->x = other.x;
-			this->y = other.y;
-			this->z = other.z;
-			return *this;
-		}
-		
-		D3DXVECTOR3 TransfertoD3DXVECTOR3 (Vec3  const &other )
-		{
-			D3DXVECTOR3 D3D;
-			D3D.x = other.x;
-			D3D.y = other.y;
-			D3D.z = other.z;
-			return D3D;
-		}
 
 		//new from me calc Veccrossize
 		Vec3 VectorCrossSize (CONST Vec3 *pV1, CONST Vec3 *pV2 )

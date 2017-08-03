@@ -1,4 +1,5 @@
 #include "Hooks.h"
+#include "Main.h"
 #include "FB SDK/Frostbite.h"
 
 #include "MinHook.h"
@@ -17,6 +18,9 @@ HRESULT WINAPI hD3D11Present(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT
 
 void __fastcall hCameraUpdate(int pCamera, int a2, int pMatrix)
 {
+  CameraManager* pCm = g_mainHandle->GetCameraManager();
+  if (pCm)
+    pCm->CameraHook(pMatrix);
   return oCameraUpdate(pCamera, a2, pMatrix);
 }
 
@@ -64,4 +68,10 @@ void Hooks::Init()
   CreateHook("Camera Update", 0x11A4560, hCameraUpdate, (LPVOID*)&oCameraUpdate);
 
   oD3D11Present = (tD3D11Present)HookVTableFunction((PDWORD*)fb::DxRenderer::Singleton()->pSwapChain, (PBYTE)oD3D11Present, 8);
+}
+
+void Hooks::RemoveHooks()
+{
+  MH_RemoveHook(MH_ALL_HOOKS);
+  MH_Uninitialize();
 }

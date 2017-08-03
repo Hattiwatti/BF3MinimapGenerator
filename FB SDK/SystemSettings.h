@@ -1,6 +1,6 @@
 #ifndef _SystemSettings_H
 #define _SystemSettings_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class SystemSettings

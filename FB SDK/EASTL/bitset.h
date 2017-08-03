@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/bitset.h
+// bitset.h
 //
 // Written and maintained by Paul Pedriana - 2005.
 ///////////////////////////////////////////////////////////////////////////////
@@ -53,8 +53,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_BITSET_H
 
 
-#include "EASTL/internal/config.h"
-#include "EASTL/algorithm.h"
+#include "internal/config.h"
+#include "algorithm.h"
 
 #ifdef _MSC_VER
     #pragma warning(push, 0)

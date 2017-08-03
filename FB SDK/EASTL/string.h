@@ -27,7 +27,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 ///////////////////////////////////////////////////////////////////////////////
-// EASTL/string.h
+// string.h
 // Written and maintained by Paul Pedriana - 2005.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -118,13 +118,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define EASTL_STRING_H
 
 
-#include "EASTL/internal/config.h"
+#include "internal/config.h"
 #if EASTL_ABSTRACT_STRING_ENABLED
-    #include "EASTL/bonus/string_abstract.h"
+    #include "bonus/string_abstract.h"
 #else // 'else' encompasses the entire rest of this file.
-#include "EASTL/allocator.h"
-#include "EASTL/iterator.h"
-#include "EASTL/algorithm.h"
+#include "allocator.h"
+#include "iterator.h"
+#include "algorithm.h"
 
 #ifdef _MSC_VER
     #pragma warning(push, 0)
@@ -3424,7 +3424,7 @@ namespace eastl
     /// We provide EASTL hash function objects for use in hash table containers.
     ///
     /// Example usage:
-    ///    #include <EASTL/hash_set.h>
+    ///    #include <hash_set.h>
     ///    hash_set<string> stringHashSet;
     ///
     template <typename T> struct hash;

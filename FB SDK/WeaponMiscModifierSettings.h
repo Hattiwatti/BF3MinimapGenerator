@@ -1,6 +1,6 @@
 #ifndef _WeaponMiscModifierSettings_H
 #define _WeaponMiscModifierSettings_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class WeaponMiscModifierSettings

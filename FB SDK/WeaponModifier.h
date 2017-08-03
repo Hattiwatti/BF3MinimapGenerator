@@ -1,14 +1,14 @@
 #ifndef _WeaponModifier_H
 #define _WeaponModifier_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/WeaponMiscModifierSettings.h"
-#include "FB SDK/WeaponShotModifier.h"
-#include "FB SDK/WeaponProjectileModifier.h"
-#include "FB SDK/WeaponAimingSimulationModifier.h"
-#include "FB SDK/WeaponAimingConfigurationModifier.h"
-#include "FB SDK/WeaponAnimTypeModifier.h"
-#include "FB SDK/WeaponMagazineModifier.h"
-#include "FB SDK/WeaponZoomModifier.h"
+#include "Frostbite_Classes.h"
+#include "WeaponMiscModifierSettings.h"
+#include "WeaponShotModifier.h"
+#include "WeaponProjectileModifier.h"
+#include "WeaponAimingSimulationModifier.h"
+#include "WeaponAimingConfigurationModifier.h"
+#include "WeaponAnimTypeModifier.h"
+#include "WeaponMagazineModifier.h"
+#include "WeaponZoomModifier.h"
 namespace fb
 {
 	class WeaponModifier

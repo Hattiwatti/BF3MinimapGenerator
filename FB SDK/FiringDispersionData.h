@@ -1,6 +1,6 @@
 #ifndef _FiringDispersionData_H
 #define _FiringDispersionData_H
-#include "FB SDK/Frostbite_Classes.h"
+#include "Frostbite_Classes.h"
 namespace fb
 {
 	class FiringDispersionData

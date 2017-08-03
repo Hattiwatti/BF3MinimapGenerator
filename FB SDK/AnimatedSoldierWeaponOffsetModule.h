@@ -1,7 +1,7 @@
 #ifndef _AnimatedSoldierWeaponOffsetModule_H
 #define _AnimatedSoldierWeaponOffsetModule_H
-#include "FB SDK/Frostbite_Classes.h"
-#include "FB SDK/WeaponOffsetData.h"
+#include "Frostbite_Classes.h"
+#include "WeaponOffsetData.h"
 namespace fb
 {
 	class AnimatedSoldierWeaponOffsetModule
