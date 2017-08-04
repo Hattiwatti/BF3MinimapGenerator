@@ -1,27 +1,50 @@
 #include "Hooks.h"
 #include "Main.h"
 #include "FB SDK/Frostbite.h"
+#include "Util/Log.h"
 
 #include "MinHook.h"
 #pragma comment(lib, "libMinHook.x86.lib")
 
 typedef HRESULT(WINAPI * tD3D11Present)(IDXGISwapChain*, UINT, UINT);
-typedef void(__fastcall* tCameraUpdate)(int,int,int);
+typedef void(__stdcall* tCameraUpdate)(int,int,int,int);
+typedef void(__stdcall* tCameraUpdate2)(int, double, float*);
 
 tD3D11Present oD3D11Present = nullptr;
 tCameraUpdate oCameraUpdate = nullptr;
+tCameraUpdate2 oCameraUpdate2 = nullptr;
 
 HRESULT WINAPI hD3D11Present(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 {
   return oD3D11Present(pSwapChain, SyncInterval, Flags);
 }
 
-void __fastcall hCameraUpdate(int pCamera, int a2, int pMatrix)
+void __stdcall hCameraUpdate2(int a1, double a2, float* a3)
 {
-  CameraManager* pCm = g_mainHandle->GetCameraManager();
-  if (pCm)
-    pCm->CameraHook(pMatrix);
-  return oCameraUpdate(pCamera, a2, pMatrix);
+  oCameraUpdate2(a1, a2, a3);
+}
+
+__declspec(naked) void hCameraUpdateAsm(int a1, int a2)
+{
+  __asm
+  {
+    push ecx // save ecx
+    push ebp // save ebp
+    mov ebp, esp // save esp
+    sub esp, __LOCAL_SIZE // allocate space for local variable
+  }
+
+  int pMatrix;
+  pMatrix = a2;
+  g_mainHandle->GetCameraManager()->CameraHook(pMatrix);
+
+  __asm
+  {
+    mov esp, ebp // restore esp
+    pop ebp // restore ebp
+    pop ecx // restore ecx
+    jmp oCameraUpdate // jump to original
+  }
 }
 
 //
@@ -53,7 +76,7 @@ PBYTE WINAPI Hooks::HookVTableFunction(PDWORD* ppVTable, PBYTE pHook, SIZE_T iIn
   VirtualProtect((void*)((*ppVTable) + iIndex), sizeof(PDWORD), PAGE_EXECUTE_READWRITE, &dwOld);
 
   PBYTE pOrig = ((PBYTE)(*ppVTable)[iIndex]);
-  (*ppVTable)[iIndex] = (DWORD64)pHook;
+  (*ppVTable)[iIndex] = (DWORD)pHook;
 
   VirtualProtect((void*)((*ppVTable) + iIndex), sizeof(PDWORD), dwOld, &dwOld);
 
@@ -62,12 +85,16 @@ PBYTE WINAPI Hooks::HookVTableFunction(PDWORD* ppVTable, PBYTE pHook, SIZE_T iIn
 
 void Hooks::Init()
 {
-  if (MH_Initialize() != MH_OK)
+  MH_STATUS status = MH_Initialize();
+  if (status != MH_OK)
+  {
+    Log::Error("Could not initialize MinHook, error code: 0x%X", status);
     return;
+  }
 
-  CreateHook("Camera Update", 0x11A4560, hCameraUpdate, (LPVOID*)&oCameraUpdate);
-
-  oD3D11Present = (tD3D11Present)HookVTableFunction((PDWORD*)fb::DxRenderer::Singleton()->pSwapChain, (PBYTE)oD3D11Present, 8);
+  CreateHook("Camera Update", 0x11A4560, hCameraUpdateAsm, (LPVOID*)&oCameraUpdate);
+  //CreateHook("Camera Update", 0x1066E80, hCameraUpdateAsm, (LPVOID*)&oCameraUpdate2);
+  //oD3D11Present = (tD3D11Present)HookVTableFunction((PDWORD*)fb::DxRenderer::Singleton()->pSwapChain, (PBYTE)oD3D11Present, 8);
 }
 
 void Hooks::RemoveHooks()

@@ -2,7 +2,6 @@
 #include "Hooks.h"
 #include "Util/Log.h"
 
-
 //
 // Initializes everything and starts up
 // the update loop
@@ -13,7 +12,8 @@ void Main::Init(HINSTANCE dllHandle)
   Log::Init();
 
   m_pCameraManager = new CameraManager();
-  Log::Write("m_pCameraManager 0x%I64X", m_pCameraManager);
+  Log::Write("m_pCameraManager 0x%X", m_pCameraManager);
+  Log::Write("g_mainHandle 0x%X", g_mainHandle);
 
   Hooks::Init();
 

@@ -29,4 +29,4 @@ public:
 	void operator=(Main const&) = delete;
 };
 
-static Main* g_mainHandle = 0;
+extern Main* g_mainHandle;
