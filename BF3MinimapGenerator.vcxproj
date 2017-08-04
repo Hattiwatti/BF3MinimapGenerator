@@ -571,6 +571,7 @@
     <ClInclude Include="Hooks.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Util\Log.h" />
+    <ClInclude Include="Util\Util.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

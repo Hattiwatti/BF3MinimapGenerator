@@ -25,6 +25,9 @@
     <Filter Include="Header Files\FB SDK\EASTL">
       <UniqueIdentifier>{a5343e26-2643-437a-b80d-7c5e5756605a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{d5e52dbc-137d-4e2e-ba34-66940b70bead}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp">
@@ -1378,6 +1381,9 @@
     </ClInclude>
     <ClInclude Include="FB SDK\EASTL\vector.h">
       <Filter>Header Files\FB SDK\EASTL</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Util.hpp">
+      <Filter>Source Files\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

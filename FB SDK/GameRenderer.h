@@ -34,7 +34,7 @@ namespace fb
 		virtual VOID addModule(INT, LPVOID);									// V: 0x2C
 		virtual VOID removeModule(INT);											// V: 0x30
 		//  valid Draw Job
-		virtual const class GameRenderSettings* getSettings();					// V: 0x34
+		virtual class GameRenderSettings* getSettings();					// V: 0x34
 		//this
 		virtual class ScreenRenderer* getScreenRenderer();						// V: 0x38
 		virtual VOID updatePerfOverlay(BOOL, FLOAT);							// V: 0x3C
@@ -59,9 +59,6 @@ namespace fb
 		GameRenderViewParams m_viewParams;	// 0x50
 
 	public:
-
-		
-
 		BOOL worldToScreen( Vec3 *world, Vec3 *screen )
 		{
 			if( !world || !screen )
@@ -91,11 +88,34 @@ namespace fb
 			return TRUE;//returns screen
 		}
 
+    void ScreenToWorld(XMFLOAT2 pos, XMVECTOR& out)
+    {
+      fb::DxRenderer* pDxRenderer = fb::DxRenderer::Singleton();
+
+      out.m128_f32[0] = (((2.0f * pos.x) / pDxRenderer->m_screenInfo.m_nWidth) - 1.0f) / m_viewParams.view.m_projectionMatrix.one().x;
+      out.m128_f32[1] = (((-2.0f * pos.y) / pDxRenderer->m_screenInfo.m_nHeight) + 1.0f) / m_viewParams.view.m_projectionMatrix.two().y;
+      out.m128_f32[2] = -1;
+
+      out = XMVector3TransformNormal(out, (XMMATRIX&)m_viewParams.view.m_viewMatrixInverse);
+      out = XMVector3Normalize(out);
+    }
+
 		static GameRenderer* Singleton()
 		{
 			return *(GameRenderer**)(0x02384D78);
 		}
 	};
+
+  class GameRenderSettings
+  {
+  public:
+    BYTE Pad000[0x10];
+    float m_ForceOrthoViewSize;
+    BYTE Pad014[0x90];
+    BYTE m_ForceOrthoViewEnable;
+    BYTE Pad0A5[0xA];
+    BYTE m_ForceSquareOrthoView;
+  };
 
 };
 

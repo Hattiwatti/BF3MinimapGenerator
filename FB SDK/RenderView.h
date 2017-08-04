@@ -39,7 +39,7 @@ namespace fb
 			FLOAT screenY = static_cast<FLOAT>(dxRenderer->m_screenInfo.m_nWindowHeight);
 			this->m_desc.aspect = screenX / screenY;
 
-			((VOID (__fastcall *)(RenderView*, LPVOID))UPDATEMATRICES)(this, NULL);
+			((VOID (__fastcall *)(RenderView*, LPVOID))0x006C3A90)(this, NULL);
 			return TRUE;
 		}
 		BOOL GetOriginFromMatrix(fb::Vec3* vOrigin)
