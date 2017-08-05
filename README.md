@@ -19,12 +19,12 @@ FB SDK (with small changes and additions) - https://www.unknowncheats.me/forum/b
 3. Press INSERT to enable freecamera, DELETE for Orthographical view, F1 for UI
 
 4. With the UI open and the ortographical view enabled, drag an area for the minimap
-- Note that rendering is depending on camera height. Objects higher than the camera do not render
-- Resolution is the width and height of one cell in the grid in meters
-- The resulting images will be limited to window height
+    - Note that rendering is depending on camera height. Objects higher than the camera do not render
+    - Resolution is the width and height of one cell in the grid in meters
+    - The resulting images will be limited to window height
 
 5. Press "Generate minimap"
-- Images will be dumped in .tga format in the Battlefield 3 folder
+    - Images will be dumped in .tga format in the Battlefield 3 folder
 
 ### Binaries
 
