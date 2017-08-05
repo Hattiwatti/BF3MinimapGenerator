@@ -36,7 +36,7 @@ namespace fb
 	virtual void postFrameUpdate(float);	// V: 0x6C
 	 static BorderInputNode* Singleton()
 	 {
-		 return *(BorderInputNode**)BORDERINPUTNODE;
+		 return *(BorderInputNode**)0x02384EB8;
 	 }
 
 

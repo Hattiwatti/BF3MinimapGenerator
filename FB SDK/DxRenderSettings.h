@@ -16,7 +16,7 @@ namespace fb
 		ID3D11Device*m_device; //0x00D8 
 		ID3D11DeviceContext*m_deviceContext; //0x00DC 
 		char unknown224[20]; //0x00E0
-		IDXGISwapChain*m_swapChain; //0x00F4 
+		IDXGISwapChain* m_swapChain; //0x00F4 
 		char unknown248[4]; //0x00F8
 	};
 

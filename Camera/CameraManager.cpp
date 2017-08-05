@@ -61,7 +61,6 @@ void CameraManager::Update(double dt)
   {
     fb::GameRenderSettings* pSettings = fb::GameRenderer::Singleton()->getSettings();
     pSettings->m_ForceOrthoViewEnable = !pSettings->m_ForceOrthoViewEnable;
-    pSettings->m_ForceSquareOrthoView = pSettings->m_ForceOrthoViewEnable;
     pSettings->m_ForceOrthoViewSize = 500.0f;
 
     while (GetAsyncKeyState(VK_DELETE) & 0x8000)
@@ -73,39 +72,27 @@ void CameraManager::Update(double dt)
   // Simple camera movement
   if(GetAsyncKeyState('W') & 0x8000)
   {
-    m_camera.finalMatrix._41 += m_camera.finalMatrix._21 * 0.01;
-    m_camera.finalMatrix._42 += m_camera.finalMatrix._22 * 0.01;
-    m_camera.finalMatrix._43 += m_camera.finalMatrix._23 * 0.01;
+    m_camera.finalMatrix._41 += m_camera.finalMatrix._21 * 0.001 * m_camera.movementSpeed;
+    m_camera.finalMatrix._42 += m_camera.finalMatrix._22 * 0.001 * m_camera.movementSpeed;
+    m_camera.finalMatrix._43 += m_camera.finalMatrix._23 * 0.001 * m_camera.movementSpeed;
   }
   if (GetAsyncKeyState('S') & 0x8000)
   {
-    m_camera.finalMatrix._41 -= m_camera.finalMatrix._21 * 0.02;
-    m_camera.finalMatrix._42 -= m_camera.finalMatrix._22 * 0.02;
-    m_camera.finalMatrix._43 -= m_camera.finalMatrix._23 * 0.02;
+    m_camera.finalMatrix._41 -= m_camera.finalMatrix._21 * 0.001 * m_camera.movementSpeed;
+    m_camera.finalMatrix._42 -= m_camera.finalMatrix._22 * 0.001 * m_camera.movementSpeed;
+    m_camera.finalMatrix._43 -= m_camera.finalMatrix._23 * 0.001 * m_camera.movementSpeed;
   }
   if (GetAsyncKeyState('A') & 0x8000)
   {
-    m_camera.finalMatrix._41 -= m_camera.finalMatrix._11 * 0.02;
-    m_camera.finalMatrix._42 -= m_camera.finalMatrix._12 * 0.02;
-    m_camera.finalMatrix._43 -= m_camera.finalMatrix._13 * 0.02;
+    m_camera.finalMatrix._41 -= m_camera.finalMatrix._11 * 0.001 * m_camera.movementSpeed;
+    m_camera.finalMatrix._42 -= m_camera.finalMatrix._12 * 0.001 * m_camera.movementSpeed;
+    m_camera.finalMatrix._43 -= m_camera.finalMatrix._13 * 0.001 * m_camera.movementSpeed;
   }
   if (GetAsyncKeyState('D') & 0x8000)
   {
-    m_camera.finalMatrix._41 += m_camera.finalMatrix._11 * 0.02;
-    m_camera.finalMatrix._42 += m_camera.finalMatrix._12 * 0.02;
-    m_camera.finalMatrix._43 += m_camera.finalMatrix._13 * 0.02;
-  }
-  if(GetAsyncKeyState(VK_SPACE) & 0x8000)
-  {
-    m_camera.finalMatrix._41 += m_camera.finalMatrix._31 * 0.05;
-    m_camera.finalMatrix._42 += m_camera.finalMatrix._32 * 0.05;
-    m_camera.finalMatrix._43 += m_camera.finalMatrix._33 * 0.05;
-  }
-  if (GetAsyncKeyState(VK_CONTROL) & 0x8000)
-  {
-    m_camera.finalMatrix._41 -= m_camera.finalMatrix._31 * 0.05;
-    m_camera.finalMatrix._42 -= m_camera.finalMatrix._32 * 0.05;
-    m_camera.finalMatrix._43 -= m_camera.finalMatrix._33 * 0.05;
+    m_camera.finalMatrix._41 += m_camera.finalMatrix._11 * 0.001 * m_camera.movementSpeed;
+    m_camera.finalMatrix._42 += m_camera.finalMatrix._12 * 0.001 * m_camera.movementSpeed;
+    m_camera.finalMatrix._43 += m_camera.finalMatrix._13 * 0.001 * m_camera.movementSpeed;
   }
 }
 

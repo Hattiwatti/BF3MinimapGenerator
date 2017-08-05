@@ -70,7 +70,7 @@ namespace fb
 			DWORD dwRet;
 			LinearTransform *view = &this->m_viewParams.view.m_viewMatrix;
 			LinearTransform *projection = &this->m_viewParams.view.m_projectionMatrix;
-			DWORD fb__projectToScreenSpace = WORLDTOSCREEN;
+			DWORD fb__projectToScreenSpace = 0x00EF1590;
 			__asm
 			{
 				push projection
@@ -91,12 +91,41 @@ namespace fb
     void ScreenToWorld(XMFLOAT2 pos, XMVECTOR& out)
     {
       fb::DxRenderer* pDxRenderer = fb::DxRenderer::Singleton();
+      XMMATRIX projectionMatrix = (XMMATRIX&)m_viewParams.view.m_projectionMatrix;
 
-      out.m128_f32[0] = (((2.0f * pos.x) / pDxRenderer->m_screenInfo.m_nWidth) - 1.0f) / m_viewParams.view.m_projectionMatrix.one().x;
-      out.m128_f32[1] = (((-2.0f * pos.y) / pDxRenderer->m_screenInfo.m_nHeight) + 1.0f) / m_viewParams.view.m_projectionMatrix.two().y;
+      /*
+      if (m_viewParams.view.m_desc.type == 1)
+      {
+        projectionMatrix = XMMatrixOrthographicRH(pDxRenderer->m_screenInfo.m_nWidth, pDxRenderer->m_screenInfo.m_nHeight,
+          m_viewParams.view.m_desc.nearPlane, m_viewParams.view.m_desc.farPlane);
+      }
+      else
+      {
+        float aspect = (float)pDxRenderer->m_screenInfo.m_nWidth / (float)pDxRenderer->m_screenInfo.m_nHeight;
+          projectionMatrix = XMMatrixPerspectiveFovRH(m_viewParams.view.m_desc.fovY, aspect,
+          m_viewParams.view.m_desc.nearPlane, m_viewParams.view.m_desc.farPlane);
+      }*/
+
+      out.m128_f32[0] = (((2.0f * pos.x) / pDxRenderer->m_screenInfo.m_nWidth) - 1.0f) / projectionMatrix.r[0].m128_f32[0];
+      out.m128_f32[1] = (((-2.0f * pos.y) / pDxRenderer->m_screenInfo.m_nHeight) + 1.0f) / projectionMatrix.r[1].m128_f32[1];
       out.m128_f32[2] = -1;
 
-      out = XMVector3TransformNormal(out, (XMMATRIX&)m_viewParams.view.m_viewMatrixInverse);
+      /*
+      XMMATRIX firstPerson = (XMMATRIX&)m_viewParams.firstPersonTransform;
+      XMMATRIX viewMatrix = XMMatrixIdentity();
+
+      viewMatrix.r[0] = XMVectorSet(firstPerson.r[0].m128_f32[0], firstPerson.r[1].m128_f32[0], firstPerson.r[2].m128_f32[0], 0);
+      viewMatrix.r[1] = XMVectorSet(firstPerson.r[0].m128_f32[1], firstPerson.r[1].m128_f32[1], firstPerson.r[2].m128_f32[1], 0);
+      viewMatrix.r[2] = XMVectorSet(firstPerson.r[0].m128_f32[2], firstPerson.r[1].m128_f32[2], firstPerson.r[2].m128_f32[2], 0);
+      
+      viewMatrix.r[3] = XMVectorSet(-XMVector3Dot(firstPerson.r[3], firstPerson.r[0]).m128_f32[0],
+                                    -XMVector3Dot(firstPerson.r[3], firstPerson.r[1]).m128_f32[0],
+                                    -XMVector3Dot(firstPerson.r[3], firstPerson.r[2]).m128_f32[0],
+                                    0);
+
+      XMMATRIX inverseViewMatrix = XMMatrixInverse(nullptr, viewMatrix);*/
+      
+		  out = XMVector3TransformNormal(out, (XMMATRIX&)m_viewParams.view.m_viewMatrixInverse);
       out = XMVector3Normalize(out);
     }
 

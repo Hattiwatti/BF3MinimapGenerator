@@ -8,21 +8,16 @@
 
 typedef HRESULT(WINAPI * tD3D11Present)(IDXGISwapChain*, UINT, UINT);
 typedef void(__stdcall* tCameraUpdate)(int,int,int,int);
-typedef void(__stdcall* tCameraUpdate2)(int, double, float*);
 
 tD3D11Present oD3D11Present = nullptr;
 tCameraUpdate oCameraUpdate = nullptr;
-tCameraUpdate2 oCameraUpdate2 = nullptr;
 
 HRESULT WINAPI hD3D11Present(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 {
+  g_mainHandle->GetUI()->Draw();
   return oD3D11Present(pSwapChain, SyncInterval, Flags);
 }
 
-void __stdcall hCameraUpdate2(int a1, double a2, float* a3)
-{
-  oCameraUpdate2(a1, a2, a3);
-}
 
 __declspec(naked) void hCameraUpdateAsm(int a1, int a2)
 {
@@ -93,8 +88,7 @@ void Hooks::Init()
   }
 
   CreateHook("Camera Update", 0x11A4560, hCameraUpdateAsm, (LPVOID*)&oCameraUpdate);
-  //CreateHook("Camera Update", 0x1066E80, hCameraUpdateAsm, (LPVOID*)&oCameraUpdate2);
-  //oD3D11Present = (tD3D11Present)HookVTableFunction((PDWORD*)fb::DxRenderer::Singleton()->pSwapChain, (PBYTE)oD3D11Present, 8);
+  oD3D11Present = (tD3D11Present)HookVTableFunction((PDWORD*)fb::DxRenderer::Singleton()->pSwapChain, (PBYTE)hD3D11Present, 8);
 }
 
 void Hooks::RemoveHooks()

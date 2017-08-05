@@ -173,7 +173,7 @@ namespace fb
 		static DebugRenderer2* Singleton()
 		{
 			typedef fb::DebugRenderer2* (__stdcall* tGetDebugRenderer2)(void);
-			tGetDebugRenderer2 GetDebugRenderer2=(tGetDebugRenderer2)(fb::DebugRenderer2*)DBGRENDERER2;
+			tGetDebugRenderer2 GetDebugRenderer2=(tGetDebugRenderer2)(fb::DebugRenderer2*)0x004B2EA0;
 			return GetDebugRenderer2();
 		}
 
@@ -190,28 +190,28 @@ namespace fb
 		void drawText(int x, int y, Color32 color, char* text, float scale)
 		{
 				typedef void (__thiscall *tdrawText)(fb::DebugRenderer2*,int, int, char*, Color32,float);
-				tdrawText mdrawText=(tdrawText)0x004B7070;  
+				tdrawText mdrawText=(tdrawText)0x004B7610;
 				mdrawText(this,x,y,text,color,scale);
 		}
 		
 		void drawLine2d(Tuple2<float>* pos1, Tuple2<float>* pos2, Color32 color)
 		{
 			typedef void (__thiscall *tdrawLine2d)(fb::DebugRenderer2*,Tuple2<float>*, Tuple2<float>*, Color32);
-			tdrawLine2d mdrawLine2d=(tdrawLine2d)0x4B92D0;
+			tdrawLine2d mdrawLine2d=(tdrawLine2d)0x004B9980;
 			mdrawLine2d(this,pos1,pos2,color);
 		}
 
 		void drawLineRect2d(Tuple2<float>* minpos, Tuple2<float>* maxpos, Color32 color)
 		{
 			typedef void (__thiscall *tdrawLineRect2d)(fb::DebugRenderer2*,Tuple2<float>*, Tuple2<float>*, Color32);
-			tdrawLineRect2d mdrawLineRect2d=(tdrawLineRect2d)0x4B9BA0;
+			tdrawLineRect2d mdrawLineRect2d=(tdrawLineRect2d)0x004A11E0;
 			mdrawLineRect2d(this,minpos,maxpos,color);
 		}
 
 		void drawRect2d(Tuple2<float>* minpos, Tuple2<float>* maxpos, Color32 color)
 		{
 			typedef void (__thiscall *tdrawRect2d)(fb::DebugRenderer2*,Tuple2<float>*, Tuple2<float>*, Color32);
-			tdrawRect2d mdrawRect2d=(tdrawRect2d)0x4B9DB0;
+			tdrawRect2d mdrawRect2d=(tdrawRect2d)0x004BA4F0;
 			mdrawRect2d(this,minpos,maxpos,color);
 		}
 
@@ -228,7 +228,7 @@ namespace fb
 			_pos.z=pos.z;
 			_pos.w=pos.w;
 			typedef void(__thiscall* tDrawSphere)(fb::DebugRenderer2*,fb::Vec3*, float, DWORD, bool, bool);
-			tDrawSphere DrawSphere=(tDrawSphere)DBGRENDRAWSPHERE;
+			tDrawSphere DrawSphere=(tDrawSphere)0x004B7610;
 			DrawSphere(pDR,&_pos,radius,col,false,false);
 		}
 
@@ -240,7 +240,7 @@ namespace fb
 				return;
 			}
 			typedef void (__thiscall* tDrawSingleColorTriangle)(fb::DebugRenderer2*, eastl::Tuple<float>*, eastl::Tuple<float>*, eastl::Tuple<float>*,DWORD);
-			tDrawSingleColorTriangle m_DrawSingleColorTriangle=(tDrawSingleColorTriangle)DBGRENDRAWTRIANGLE;
+			tDrawSingleColorTriangle m_DrawSingleColorTriangle=(tDrawSingleColorTriangle)0x004BA160;
 			eastl::Tuple<float> t1, t2, t3;
 			t1._1=x0;
 			t1._2=y0;

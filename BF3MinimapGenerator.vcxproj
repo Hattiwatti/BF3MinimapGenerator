@@ -122,7 +122,12 @@
     <ClCompile Include="Camera\CameraManager.cpp" />
     <ClCompile Include="DllMain.cpp" />
     <ClCompile Include="Hooks.cpp" />
+    <ClCompile Include="ImGui\imgui.cpp" />
+    <ClCompile Include="ImGui\imgui_demo.cpp" />
+    <ClCompile Include="ImGui\imgui_draw.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_dx11.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
     <ClCompile Include="Util\Log.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -569,9 +574,25 @@
     <ClInclude Include="FB SDK\ZoomLevelData.h" />
     <ClInclude Include="FB SDK\ZoomLevelLockData.h" />
     <ClInclude Include="Hooks.h" />
+    <ClInclude Include="ImGui\imconfig.h" />
+    <ClInclude Include="ImGui\imgui.h" />
+    <ClInclude Include="ImGui\imgui_impl_dx11.h" />
+    <ClInclude Include="ImGui\imgui_internal.h" />
+    <ClInclude Include="ImGui\stb_rect_pack.h" />
+    <ClInclude Include="ImGui\stb_textedit.h" />
+    <ClInclude Include="ImGui\stb_truetype.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="UserInterface.h" />
     <ClInclude Include="Util\Log.h" />
     <ClInclude Include="Util\Util.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BF3MinimapGenerator.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ImGui\imgui_PixelShader.cso" />
+    <None Include="ImGui\imgui_VertexShader.cso" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
