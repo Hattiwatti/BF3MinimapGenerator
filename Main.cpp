@@ -19,7 +19,9 @@ void Main::Init(HINSTANCE dllHandle)
   Log::Init();
 
   m_exit = m_requestCapture = m_startGenerating = false;
-  HRESULT hr = CoInitialize(nullptr);
+
+  // Initialize Windows Runtime and COM for image processing
+  HRESULT hr = CoInitializeEx(nullptr, COINITBASE_MULTITHREADED);
   if(hr != S_OK)
     Log::Warning("CoInitialize failed. Result 0x%X", hr);
 
@@ -31,7 +33,6 @@ void Main::Init(HINSTANCE dllHandle)
   fb::ClientLevel* pLevel = fb::ClientGameContext::Singleton()->m_level;
   fb::WorldRenderSettings* pRenderSettings = pLevel->m_worldRenderModule->m_worldRenderer->m_worldRenderSettings;
   pRenderSettings->m_shadowmapResolution = 4096;
-  pRenderSettings->m_shadowViewDistance = 10000;
   pLevel->m_vegetationManager->m_settings->m_maxActiveDistance = 4000;
   pLevel->m_vegetationManager->m_settings->m_shadowMeshEnable = 1;
 
@@ -83,6 +84,7 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
 {
   Log::Write("Begin generating");
   fb::GameRenderer::Singleton()->getSettings()->m_ForceOrthoViewSize = m_orthoSize;
+  fb::GameTimeSettings::Singleton()->m_timeScale = 0.01;
 
   // These calculations are probably obsolete since the UI already
   // calculates best fitting square
@@ -150,8 +152,8 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
     }
   }
 
-  Log::Write("Done, captures %d cells", capturedCells.size());
-
+  fb::GameTimeSettings::Singleton()->m_timeScale = 1.0f;
+  Log::Write("Done");
   m_startGenerating = false;
 }
 
@@ -192,9 +194,10 @@ void Main::Capture()
     return;
   }
 
-  std::wstring path = L"grid_" + std::to_wstring(m_currentRow) + L"_" + std::to_wstring(m_currentColumn) + L".png";
+  std::wstring path = L"grid_" + std::to_wstring(m_currentRow) + L"_" + std::to_wstring(m_currentColumn) + L".tga";
   wprintf(L"%s\n", path.c_str());
-  hr = SaveToWICFile(*cropped.GetImage(0,0,0), WIC_FLAGS_FORCE_RGB, GUID_ContainerFormatPng, path.c_str(), &GUID_WICPixelFormat128bppRGBFloat);
+  hr = SaveToTGAFile(*cropped.GetImage(0, 0, 0), path.c_str());
+  //hr = SaveToWICFile(*cropped.GetImage(0,0,0), WIC_FLAGS_IGNORE_SRGB, GUID_ContainerFormatPng, path.c_str(), &GUID_WICPixelFormat128bppRGBFloat);
   if (hr != S_OK)
     Log::Error("Could not save to file. Result 0x%X, GetLastError 0x%X", hr, GetLastError());
 

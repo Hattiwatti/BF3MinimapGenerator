@@ -310,6 +310,7 @@ namespace fb
 	class GameRenderer;
 	class GameRenderViewParams;
 	class GameTime;
+  class GameTimeSettings;
 	class GameView;
 	class GameWorld;
 	class GeometryDeclarationDesc;
