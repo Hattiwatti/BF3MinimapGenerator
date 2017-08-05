@@ -34,6 +34,13 @@ UserInterface::UserInterface()
   m_initialized = true;
 }
 
+UserInterface::~UserInterface()
+{
+  m_enabled = m_initialized = false;
+  ImGui_ImplDX11_InvalidateDeviceObjects();
+  ImGui_ImplDX11_Shutdown();
+}
+
 XMVECTOR click_World;
 XMVECTOR drag_World;
 bool dragged = false;
@@ -114,22 +121,22 @@ void UserInterface::Draw()
 
     XMFLOAT2 dragCorner(clickPos.x + square.x, clickPos.y + square.y);
 
-
+    // Draw capture area
     fb::DebugRenderer2::Singleton()->drawRect2d(new fb::Tuple2<float>(clickPos.x, clickPos.y),
         new fb::Tuple2<float>(dragCorner.x, dragCorner.y),
         fb::Color32(0xFF,0,0,0xB0));
 
+    // Draw grid to visualize cells
     for(int i = 0; i <= gridSize; ++i)
     {
-      fb::DebugRenderer2::Singleton()->drawLine2d(new fb::Tuple2<float>(clickPos.x + i*(sideLength / gridSize), clickPos.y),
-        new fb::Tuple2<float>(clickPos.x + i*(sideLength / gridSize), dragCorner.y),
+      fb::DebugRenderer2::Singleton()->drawLine2d(new fb::Tuple2<float>(clickPos.x + i*(sideLength / gridSize)*(dragDelta.x < 0 ? -1 : 1), clickPos.y),
+        new fb::Tuple2<float>(clickPos.x + i*(sideLength / gridSize)*(dragDelta.x < 0 ? -1:1), dragCorner.y),
         fb::Color32(0, 0, 0, 0xFF));
     }
-
     for (int i = 0; i <= gridSize; ++i)
     {
-      fb::DebugRenderer2::Singleton()->drawLine2d(new fb::Tuple2<float>(clickPos.x, clickPos.y + i*(sideLength / gridSize)),
-        new fb::Tuple2<float>(dragCorner.x, clickPos.y + i*(sideLength / gridSize)),
+      fb::DebugRenderer2::Singleton()->drawLine2d(new fb::Tuple2<float>(clickPos.x, clickPos.y + i*(sideLength / gridSize)*(dragDelta.y < 0 ? -1 : 1)),
+        new fb::Tuple2<float>(dragCorner.x, clickPos.y + i*(sideLength / gridSize)*(dragDelta.y < 0 ? -1 : 1)),
         fb::Color32(0, 0, 0, 0xFF));
     }
 

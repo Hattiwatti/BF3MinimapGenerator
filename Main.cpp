@@ -20,7 +20,7 @@ void Main::Init(HINSTANCE dllHandle)
 
   m_exit = m_requestCapture = m_startGenerating = false;
 
-  // Initialize Windows Runtime and COM for image processing
+  // Initialize Windows Runtime and COM for DirectXTex
   HRESULT hr = CoInitializeEx(nullptr, COINITBASE_MULTITHREADED);
   if(hr != S_OK)
     Log::Warning("CoInitialize failed. Result 0x%X", hr);
@@ -62,7 +62,7 @@ void Main::Update()
 }
 
 //
-// Function which the drawing thread can call
+// Function which the UI can call
 // to begin minimap generation
 //
 void Main::Start(XMFLOAT2 corner1, XMFLOAT2 corner2)
@@ -145,7 +145,8 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
     {
       m_pCameraManager->GetCamera()->finalMatrix.m[3][0] = startCell.x + m_currentColumn*m_orthoSize;
       m_pCameraManager->GetCamera()->finalMatrix.m[3][2] = startCell.y + m_currentRow*m_orthoSize;
-      Sleep(250);
+      Sleep(1000);
+      // Request capture in present and wait
       m_requestCapture = true;
       while(m_requestCapture)
         Sleep(100);
@@ -157,6 +158,10 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
   m_startGenerating = false;
 }
 
+//
+// Captures an image
+// Gets called by IDXGISwapChain::Present
+//
 void Main::Capture()
 {
   if (!m_requestCapture) return;
@@ -213,4 +218,5 @@ Main::~Main()
 
 	m_dllHandle = 0;
   delete m_pCameraManager;
+  delete m_pUserInterface;
 }

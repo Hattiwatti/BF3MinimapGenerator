@@ -41,7 +41,6 @@ private:
   DirectX::XMFLOAT2 _corner2;
 
   bool m_requestCapture;
-  std::vector<DirectX::ScratchImage> capturedCells;
   int m_currentRow;
   int m_currentColumn;
 
