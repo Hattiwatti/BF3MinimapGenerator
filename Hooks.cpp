@@ -14,6 +14,7 @@ tCameraUpdate oCameraUpdate = nullptr;
 
 HRESULT WINAPI hD3D11Present(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 {
+  g_mainHandle->Capture();
   g_mainHandle->GetUI()->Draw();
   return oD3D11Present(pSwapChain, SyncInterval, Flags);
 }

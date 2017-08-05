@@ -52,7 +52,7 @@ void UserInterface::Draw()
       ImGui::InputFloat("Camera Speed", &g_mainHandle->GetCameraManager()->GetCamera()->movementSpeed, 1, 0, 2);
       ImGui::InputFloat("Camera Height", &g_mainHandle->GetCameraManager()->GetCamera()->finalMatrix._42, 5, 0, 0);
       ImGui::InputFloat("OrthoView Size", &fb::GameRenderer::Singleton()->getSettings()->m_ForceOrthoViewSize, 1, 2, 0);
-      ImGui::InputFloat("Resolution", g_mainHandle->GetOrthoSize(), 1, 2, 0);
+      ImGui::InputFloat("Resolution", &g_mainHandle->GetOrthoSize(), 1, 2, 0);
 
       ImGui::Text("Click screen-to-world");
       ImGui::Text("X: %.2f", click_World.m128_f32[0]);
@@ -81,14 +81,58 @@ void UserInterface::Draw()
     ImVec2 clickPos = ImGui::GetIO().MouseClickedPos[0];
     ImVec2 dragDelta = ImGui::GetMouseDragDelta(0);
 
+    // Convert dragged area to world space and round to closest
+    // fitting square for given resolution
+    //
+    // Example:
+    // User draws a square that is 1000x1000 units in world space
+    // and user has set resolution to 400. 1000/400 = 2.5 which
+    // gets rounded to 3, so the resulting closest square is 3x3
+    // or 1200x1200. Convert this back to screen space and display.
+
+    // Square side length in screen space
     float sideLength = std::max(fabs(dragDelta.x), fabs(dragDelta.y));
+
+    // Unit-to-pixel ratio
+    float widthRatio = (pGameRenderer->m_viewParams.view.m_desc.orthoWidth) / (float)pDxRenderer->m_screenInfo.m_nWidth;
+    float heightRatio = (pGameRenderer->m_viewParams.view.m_desc.orthoHeight) / (float)pDxRenderer->m_screenInfo.m_nHeight;
+
+    // Convert to world space
+    float sideLength_World = sideLength * widthRatio;
+
+    // How many grids fit? Round to closest
+    float gridSize = sideLength_World / g_mainHandle->GetOrthoSize();
+    gridSize = round(gridSize);
+
+    // Back to screen space
+    sideLength_World = gridSize*g_mainHandle->GetOrthoSize();
+    sideLength = sideLength_World / widthRatio;
+
+
     XMFLOAT2 square = XMFLOAT2(dragDelta.x < 0 ? -sideLength : sideLength,
                                 dragDelta.y < 0 ? -sideLength : sideLength);
 
     XMFLOAT2 dragCorner(clickPos.x + square.x, clickPos.y + square.y);
+
+
     fb::DebugRenderer2::Singleton()->drawRect2d(new fb::Tuple2<float>(clickPos.x, clickPos.y),
         new fb::Tuple2<float>(dragCorner.x, dragCorner.y),
         fb::Color32(0xFF,0,0,0xB0));
+
+    for(int i = 0; i <= gridSize; ++i)
+    {
+      fb::DebugRenderer2::Singleton()->drawLine2d(new fb::Tuple2<float>(clickPos.x + i*(sideLength / gridSize), clickPos.y),
+        new fb::Tuple2<float>(clickPos.x + i*(sideLength / gridSize), dragCorner.y),
+        fb::Color32(0, 0, 0, 0xFF));
+    }
+
+    for (int i = 0; i <= gridSize; ++i)
+    {
+      fb::DebugRenderer2::Singleton()->drawLine2d(new fb::Tuple2<float>(clickPos.x, clickPos.y + i*(sideLength / gridSize)),
+        new fb::Tuple2<float>(dragCorner.x, clickPos.y + i*(sideLength / gridSize)),
+        fb::Color32(0, 0, 0, 0xFF));
+    }
+
 
     if (pGameRenderer->m_viewParams.view.m_desc.type == 0)
     {
@@ -101,8 +145,7 @@ void UserInterface::Draw()
     else
     {
       XMFLOAT2 center((float)pDxRenderer->m_screenInfo.m_nWidth / 2, (float)pDxRenderer->m_screenInfo.m_nHeight / 2);
-      float widthRatio = (pGameRenderer->m_viewParams.view.m_desc.orthoWidth) / (float)pDxRenderer->m_screenInfo.m_nWidth;
-      float heightRatio = (pGameRenderer->m_viewParams.view.m_desc.orthoHeight) / (float)pDxRenderer->m_screenInfo.m_nHeight;
+
       XMFLOAT4 eyeTrans = (XMFLOAT4&)pGameRenderer->m_viewParams.firstPersonTransform.trans;
 
       click_World = XMVectorSet(eyeTrans.x + (clickPos.x - center.x)*widthRatio, eyeTrans.z + (clickPos.y - center.y)*heightRatio, 0, 0);

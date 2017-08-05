@@ -3,6 +3,10 @@
 #include "Util/Log.h"
 #include "FB SDK/Frostbite.h"
 
+#include <wincodec.h>
+#include <string>
+#pragma comment(lib, "DirectXTex.lib")
+
 //const float ORTHO_SIZE = 500.f;
 
 //
@@ -14,16 +18,24 @@ void Main::Init(HINSTANCE dllHandle)
 	m_dllHandle = dllHandle;
   Log::Init();
 
-  m_pCameraManager = new CameraManager();
-  Log::Write("m_pCameraManager 0x%X", m_pCameraManager);
-  Log::Write("g_mainHandle 0x%X", g_mainHandle);
+  m_exit = m_requestCapture = m_startGenerating = false;
+  HRESULT hr = CoInitialize(nullptr);
+  if(hr != S_OK)
+    Log::Warning("CoInitialize failed. Result 0x%X", hr);
 
+  m_pCameraManager = new CameraManager();
   m_pUserInterface = new UserInterface();
 
   Hooks::Init();
 
+  fb::ClientLevel* pLevel = fb::ClientGameContext::Singleton()->m_level;
+  fb::WorldRenderSettings* pRenderSettings = pLevel->m_worldRenderModule->m_worldRenderer->m_worldRenderSettings;
+  pRenderSettings->m_shadowmapResolution = 4096;
+  pRenderSettings->m_shadowViewDistance = 10000;
+  pLevel->m_vegetationManager->m_settings->m_maxActiveDistance = 4000;
+  pLevel->m_vegetationManager->m_settings->m_shadowMeshEnable = 1;
+
   m_orthoSize = 500.0f;
-	m_exit = false;
 	while (!m_exit)
 		Update();
 }
@@ -72,6 +84,9 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
   Log::Write("Begin generating");
   fb::GameRenderer::Singleton()->getSettings()->m_ForceOrthoViewSize = m_orthoSize;
 
+  // These calculations are probably obsolete since the UI already
+  // calculates best fitting square
+
   Log::Write("corner1 %f : %f", corner1.x, corner1.y);
   Log::Write("corner2 %f : %f", corner2.x, corner2.y);
   XMFLOAT2 square(corner2.x - corner1.x, corner2.y - corner1.y);
@@ -80,14 +95,8 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
 
   Log::Write("Absolute size %fx%f", sizeAbs, sizeAbs);
 
-  float gridAmount = sizeAbs / m_orthoSize;
+  float gridAmount = round(sizeAbs / m_orthoSize);
   Log::Write("GridAmount %f", gridAmount);
-  if (round(gridAmount) < gridAmount)
-    gridAmount += round(gridAmount) + 1;
-  else
-    gridAmount = round(gridAmount);
-
-  Log::Write("Rounded %f", gridAmount);
 
   XMFLOAT2 center(corner2.x - (square.x / 2), corner2.y - (square.y / 2));
   Log::Write("Center or the square %f : %f", center.x, center.y);
@@ -115,7 +124,7 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
   .----.----.----.----.----.
   |    |    |    |    |    |
   '----'----'----'----'----.
-    *<--------| ends up here (center, what we want)
+     *<-------| ends up here (center, what we want)
   */
 
   if((int)gridAmount % 2 == 0)
@@ -126,29 +135,70 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
     Log::Write("startCell %f : %f", startCell.x, startCell.y);
   }
 
-  XMFLOAT2 cameraCell = startCell;
+  fb::DxRenderer* pDxRenderer = fb::DxRenderer::Singleton();
 
-  m_pCameraManager->GetCamera()->finalMatrix.m[3][0] = cameraCell.x;
-  m_pCameraManager->GetCamera()->finalMatrix.m[3][2] = cameraCell.y;
-  Sleep(1000);
-
-  for(int i = 0; i<gridAmount; ++i)
+  for(m_currentRow = 0; m_currentRow<gridAmount; ++m_currentRow)
   {
-    for(int j=0; j<gridAmount; ++j)
+    for(m_currentColumn=0; m_currentColumn<gridAmount; ++m_currentColumn)
     {
-      Log::Write("%dx%d ", i+1, j+1);
-      cameraCell.x += m_orthoSize;
-      m_pCameraManager->GetCamera()->finalMatrix.m[3][0] = cameraCell.x;
-      Sleep(500);
+      m_pCameraManager->GetCamera()->finalMatrix.m[3][0] = startCell.x + m_currentColumn*m_orthoSize;
+      m_pCameraManager->GetCamera()->finalMatrix.m[3][2] = startCell.y + m_currentRow*m_orthoSize;
+      Sleep(250);
+      m_requestCapture = true;
+      while(m_requestCapture)
+        Sleep(100);
     }
-    cameraCell.x = startCell.x;
-    cameraCell.y += m_orthoSize;
-    m_pCameraManager->GetCamera()->finalMatrix.m[3][0] = cameraCell.x;
-    m_pCameraManager->GetCamera()->finalMatrix.m[3][2] = cameraCell.y;
   }
-  printf("\n");
-  Log::Write("Done");
+
+  Log::Write("Done, captures %d cells", capturedCells.size());
+
   m_startGenerating = false;
+}
+
+void Main::Capture()
+{
+  if (!m_requestCapture) return;
+
+  ID3D11Texture2D* pBackBuffer = nullptr;
+  HRESULT hr = fb::DxRenderer::Singleton()->pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
+  if (hr != S_OK)
+  {
+    Log::Error("Could not get backbuffer for screen capture. Result 0x%X, GetLastError 0x%X", hr, GetLastError());
+    m_requestCapture = false;
+    return;
+  }
+  ScratchImage result;
+  hr = DirectX::CaptureTexture(fb::DxRenderer::Singleton()->pDevice, fb::DxRenderer::Singleton()->pContext,
+    pBackBuffer, result);
+
+  if (hr != S_OK)
+  {
+    Log::Error("Could not capture backbuffer. Result 0x%X, GetLastError 0x%X", hr, GetLastError());
+    m_requestCapture = false;
+    return;
+  }
+
+  auto mdata = result.GetMetadata();
+  ScratchImage cropped;
+  cropped.Initialize2D(mdata.format, mdata.height, mdata.height, mdata.arraySize,
+    mdata.mipLevels, mdata.miscFlags);
+
+  Rect r = Rect(mdata.width / 2 - mdata.height / 2, 0, mdata.height, mdata.height);
+  hr = CopyRectangle(*result.GetImage(0, 0, 0), r, *cropped.GetImage(0, 0, 0), TEX_FILTER_DEFAULT, 0, 0);
+  if(hr != S_OK)
+  {
+    Log::Error("Could not crop captured image. Result 0x%X, GetLastError 0x%X", hr, GetLastError());
+    m_requestCapture = false;
+    return;
+  }
+
+  std::wstring path = L"grid_" + std::to_wstring(m_currentRow) + L"_" + std::to_wstring(m_currentColumn) + L".png";
+  wprintf(L"%s\n", path.c_str());
+  hr = SaveToWICFile(*cropped.GetImage(0,0,0), WIC_FLAGS_FORCE_RGB, GUID_ContainerFormatPng, path.c_str(), &GUID_WICPixelFormat128bppRGBFloat);
+  if (hr != S_OK)
+    Log::Error("Could not save to file. Result 0x%X, GetLastError 0x%X", hr, GetLastError());
+
+  m_requestCapture = false;
 }
 
 Main::Main()

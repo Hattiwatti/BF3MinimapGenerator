@@ -134,6 +134,12 @@ namespace fb
 
 	}; // fb::EnlightenComponentData
 
+  class MeshSettings
+  {
+    
+  };
+
+
 	class WorldRenderer
     {
     public:
