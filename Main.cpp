@@ -49,6 +49,7 @@ void Main::Update()
 {
   if(GetAsyncKeyState(VK_F1) & 0x8000)
   {
+    m_pCameraManager->ToggleCamera();
     m_pUserInterface->Toggle();
     while (GetAsyncKeyState(VK_F1) & 0x8000)
       Sleep(100);

@@ -7,6 +7,7 @@ public:
   void CameraHook(int pMatrix);
   void Update(double);
 
+  void ToggleCamera();
   Camera* GetCamera() { return &m_camera; }
 
 private:

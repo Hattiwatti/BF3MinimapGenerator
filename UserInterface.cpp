@@ -67,7 +67,7 @@ void UserInterface::Draw()
       ImGui::Text("Drag screen-to-world");
       ImGui::Text("X: %.2f", drag_World.m128_f32[0]);
       ImGui::Text("Y: %.2f", drag_World.m128_f32[1]);
-      if(ImGui::Button("Generate minimap", ImVec2(100,33)))
+      if(ImGui::Button("Generate minimap", ImVec2(120,30)))
       {
         g_mainHandle->Start(XMFLOAT2(click_World.m128_f32[0], click_World.m128_f32[1]),
                                       XMFLOAT2(drag_World.m128_f32[0], drag_World.m128_f32[1]));
