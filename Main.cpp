@@ -38,12 +38,15 @@ void Main::Init(HINSTANCE dllHandle)
   Hooks::Init();
 
   fb::ClientLevel* pLevel = fb::ClientGameContext::Singleton()->m_level;
+  fb::MeshSettings* pMeshSettings = fb::MeshSettings::Singleton();
   fb::WorldRenderSettings* pRenderSettings = pLevel->m_worldRenderModule->m_worldRenderer->m_worldRenderSettings;
   pRenderSettings->m_shadowmapResolution = 4096;
   pRenderSettings->m_shadowViewDistance = 500;
   pRenderSettings->m_shadowmapQuality = 0;
   pLevel->m_vegetationManager->m_settings->m_maxActiveDistance = 4000;
   pLevel->m_vegetationManager->m_settings->m_shadowMeshEnable = 1;
+  pMeshSettings->m_globalLodScale = 1000.f;
+  pMeshSettings->m_globalShadowLodScale = 1000.f;
 
   m_orthoSize = 500.0f;
 	while (!m_exit)
@@ -95,6 +98,9 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
   Log::Write("Begin generating");
   fb::GameRenderer::Singleton()->getSettings()->m_ForceOrthoViewSize = m_orthoSize;
   fb::GameTimeSettings::Singleton()->m_timeScale = 0.01;
+  fb::WorldRenderer* pWorldRenderer = fb::ClientGameContext::Singleton()->m_level->m_worldRenderModule->m_worldRenderer;
+  pWorldRenderer->getPostProcessSystem()->m_settings->m_forceVignetteScale.x = 0;
+  pWorldRenderer->getPostProcessSystem()->m_settings->m_forceVignetteScale.y = 0;
 
   // These calculations are probably obsolete since the UI already
   // calculates best fitting square
@@ -160,6 +166,9 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
     {
       Log::Error("Failed to create path \"%s\", error code 0x%X", finalDirectory.c_str(), GetLastError());
       m_startGenerating = false;
+      fb::GameTimeSettings::Singleton()->m_timeScale = 1.0f;
+      pWorldRenderer->getPostProcessSystem()->m_settings->m_forceVignetteScale.x = -1;
+      pWorldRenderer->getPostProcessSystem()->m_settings->m_forceVignetteScale.y = -1;
       return;
     }
     finalDirectory = directoryMapName + "\\map" + std::to_string(mapNumber++);
@@ -195,6 +204,9 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
   }
 
   fb::GameTimeSettings::Singleton()->m_timeScale = 1.0f;
+  pWorldRenderer->getPostProcessSystem()->m_settings->m_forceVignetteScale.x = -1;
+  pWorldRenderer->getPostProcessSystem()->m_settings->m_forceVignetteScale.y = -1;
+  
   infoFile.close();
   Log::Write("Done");
   m_startGenerating = false;

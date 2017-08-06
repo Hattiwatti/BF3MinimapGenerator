@@ -7,10 +7,12 @@
 #pragma comment(lib, "libMinHook.x86.lib")
 
 typedef HRESULT(WINAPI * tD3D11Present)(IDXGISwapChain*, UINT, UINT);
+typedef void(__thiscall* tVisualEnvUpdate)(void*, int);
 typedef void(__stdcall* tCameraUpdate)(int,int,int,int);
 
 tD3D11Present oD3D11Present = nullptr;
 tCameraUpdate oCameraUpdate = nullptr;
+tVisualEnvUpdate oVisualEnvUpdate = nullptr;
 
 HRESULT WINAPI hD3D11Present(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 {
@@ -18,7 +20,6 @@ HRESULT WINAPI hD3D11Present(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT
   g_mainHandle->GetUI()->Draw();
   return oD3D11Present(pSwapChain, SyncInterval, Flags);
 }
-
 
 __declspec(naked) void hCameraUpdateAsm(int a1, int a2)
 {
@@ -40,6 +41,16 @@ __declspec(naked) void hCameraUpdateAsm(int a1, int a2)
     pop ebp // restore ebp
     pop ecx // restore ecx
     jmp oCameraUpdate // jump to original
+  }
+}
+
+void __fastcall hVisualEnvUpdate(void* This, void* _EDX, int a2)
+{
+  oVisualEnvUpdate(This,a2);
+  if(g_mainHandle->GetVisualOverrides().disableFog)
+  {
+    DWORD* fogBools = (DWORD*)((int)This + 0x2B4);
+    *fogBools = 0;
   }
 }
 
@@ -89,6 +100,7 @@ void Hooks::Init()
   }
 
   CreateHook("Camera Update", 0x11A4560, hCameraUpdateAsm, (LPVOID*)&oCameraUpdate);
+  CreateHook("VisualEnv Update", 0x1791F30, hVisualEnvUpdate, (LPVOID*)&oVisualEnvUpdate);
   oD3D11Present = (tD3D11Present)HookVTableFunction((PDWORD*)fb::DxRenderer::Singleton()->pSwapChain, (PBYTE)hD3D11Present, 8);
 }
 
@@ -96,4 +108,6 @@ void Hooks::RemoveHooks()
 {
   MH_RemoveHook(MH_ALL_HOOKS);
   MH_Uninitialize();
+
+  HookVTableFunction((PDWORD*)fb::DxRenderer::Singleton()->pSwapChain, (PBYTE)oD3D11Present, 8);
 }

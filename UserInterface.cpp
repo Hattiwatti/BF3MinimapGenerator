@@ -5,6 +5,7 @@
 #include "Main.h"
 
 #include <algorithm>
+#include <winuser.h>
 
 UserInterface::UserInterface()
 {
@@ -17,11 +18,18 @@ UserInterface::UserInterface()
     return;
   }
 
-  DWORD thread_id = GetWindowThreadProcessId(FindWindowA(NULL, "Battlefield 3 - Venice Unleashed [Beta Build 11182]"), NULL);
-  if(thread_id == 0) // try normal BF3
+  // Find by class name, should be unique and stay the same
+  // If not found, use window title
+  DWORD thread_id = GetWindowThreadProcessId(FindWindowA("Battlefield 3", NULL), NULL);
+  if(!thread_id)
     thread_id = GetWindowThreadProcessId(FindWindowA(NULL, "Battlefield 3™"), NULL);
-  if (!(hGetMessage = SetWindowsHookEx(WH_GETMESSAGE, this->GetMessage_Callback, g_mainHandle->GetDllHandle(), thread_id)))
-    Log::Write("Couldn't create WH_GETMESSAGE hook. LastError 0x%X", GetLastError());
+
+  if (thread_id)
+  {
+    if (!(hGetMessage = SetWindowsHookEx(WH_GETMESSAGE, this->GetMessage_Callback, g_mainHandle->GetDllHandle(), thread_id)))
+      Log::Write("Couldn't create WH_GETMESSAGE hook. LastError 0x%X", GetLastError());
+  }
+  else Log::Warning("Could not find window thread handle");
 
   m_enabled = false;
   m_hasKeyboardFocus = false;
@@ -53,8 +61,6 @@ void UserInterface::Draw()
 
   ImGui_ImplDX11_NewFrame();
   {
-    ImGuiIO& io = ImGui::GetIO();
-
     ImGui::SetNextWindowSize(ImVec2(300, 500));
     ImGui::Begin("Minimap Generator", nullptr);
     {
@@ -63,12 +69,15 @@ void UserInterface::Draw()
       ImGui::InputFloat("OrthoView Size", &fb::GameRenderer::Singleton()->getSettings()->m_ForceOrthoViewSize, 1, 2, 0);
       ImGui::InputFloat("Resolution", &g_mainHandle->GetOrthoSize(), 1, 2, 0);
 
+      ImGui::Checkbox("Disable fog", &g_mainHandle->GetVisualOverrides().disableFog);
+
       ImGui::Text("Click screen-to-world");
       ImGui::Text("X: %.2f", click_World.m128_f32[0]);
       ImGui::Text("Y: %.2f", click_World.m128_f32[1]);
       ImGui::Text("Drag screen-to-world");
       ImGui::Text("X: %.2f", drag_World.m128_f32[0]);
       ImGui::Text("Y: %.2f", drag_World.m128_f32[1]);
+
       if(ImGui::Button("Generate minimap", ImVec2(120,30)))
       {
         g_mainHandle->Start(XMFLOAT2(click_World.m128_f32[0], click_World.m128_f32[1]),

@@ -136,7 +136,30 @@ namespace fb
 
   class MeshSettings
   {
-    
+  public:
+    PAD(0x14);
+    float m_globalLodScale;
+    float m_globalShadowLodScale;
+
+  public:
+    static MeshSettings* Singleton()
+    {
+      return *(MeshSettings**)(0x0236B1B4);
+    }
+  };
+
+  class GlobalPostProcessSettings
+  {
+  public:
+    PAD(0x68);
+    fb::Vec2 m_forceVignetteScale;
+  };
+
+  class PostProcessSystem
+  {
+  public:
+    PAD(0x8);
+    fb::GlobalPostProcessSettings* m_settings;
   };
 
 
@@ -146,10 +169,26 @@ namespace fb
         class RootView
         {
         public:
-            DWORD    index;
+            DWORD index;
             /*WorldDrawViewInfo*   */void* viewInfo;
         };
-        void*    m_vtable;
+        virtual int addRef();	// V: 0x0
+        virtual int release();	// V: 0x4
+        virtual void createUpdateJob(); // (const struct fb::WorldRenderUpdateParams &, class EA::Jobs::JobInstanceHandle &, class EA::Jobs::JobInstanceHandle &);	// V: 0x8
+        virtual void draw();	// V: 0xC
+        virtual void setSettings(class fb::WorldRenderSettings *);	// V: 0x10
+        virtual const class fb::WorldRenderSettings * getSettings();	// V: 0x14
+        virtual void addModule();// (struct fb::IWorldRenderModule *);	// V: 0x18
+        virtual void removeModule(); // (struct fb::IWorldRenderModule *);	// V: 0x1C
+        virtual void addPrimitiveRenderer(); // (struct fb::IWorldPrimitiveRenderer *);	// V: 0x20
+        virtual void removePrimitiveRenderer(); // (struct fb::IWorldPrimitiveRenderer *);	// V: 0x24
+        virtual struct fb::ITexture * getHDRRenderTargetColorTexture(unsigned int);	// V: 0x28
+        virtual class fb::SmartRef<fb::ITexture> * getGeometryBufferTextures();	// V: 0x2C
+        virtual unsigned int getGeometryBufferTextureCount();	// V: 0x30
+        virtual class fb::PostProcessSystem * getPostProcessSystem();	// V: 0x34
+        virtual DWORD getHudRenderTargetView();	// V: 0x38
+        virtual struct fb::ITexture * getHudRenderTargetTexture();	// V: 0x3C
+        virtual DWORD getWorldOcclusionQueryModule();	// V: 0x40
 		char _0x0004[32];
 			DWORD m_viewWidth; //0x0024 
 			DWORD m_viewHeight; //0x0028 

@@ -6,6 +6,11 @@
 #include "Camera/CameraManager.h"
 #include "UserInterface.h"
 
+struct VisualOverride
+{
+  bool disableFog;
+};
+
 class Main
 {
 public:
@@ -20,6 +25,7 @@ public:
   HINSTANCE GetDllHandle() { return m_dllHandle; }
 
   float& GetOrthoSize() { return m_orthoSize; }
+  VisualOverride& GetVisualOverrides() { return m_visualOverrides; }
 
   void Start(DirectX::XMFLOAT2, DirectX::XMFLOAT2);
   void GenerateMinimap(DirectX::XMFLOAT2, DirectX::XMFLOAT2);
@@ -44,6 +50,7 @@ private:
   std::string m_directory;
 
   float m_orthoSize;
+  VisualOverride m_visualOverrides;
 
 public:
 	Main(Main const&)			= delete;
