@@ -18,6 +18,8 @@ UserInterface::UserInterface()
   }
 
   DWORD thread_id = GetWindowThreadProcessId(FindWindowA(NULL, "Battlefield 3 - Venice Unleashed [Beta Build 11182]"), NULL);
+  if(thread_id == 0) // try normal BF3
+    thread_id = GetWindowThreadProcessId(FindWindowA(NULL, "Battlefield 3™"), NULL);
   if (!(hGetMessage = SetWindowsHookEx(WH_GETMESSAGE, this->GetMessage_Callback, g_mainHandle->GetDllHandle(), thread_id)))
     Log::Write("Couldn't create WH_GETMESSAGE hook. LastError 0x%X", GetLastError());
 

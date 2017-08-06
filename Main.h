@@ -3,8 +3,6 @@
 #include <memory>
 #include <vector>
 
-#include <DirectXTex.h>
-
 #include "Camera/CameraManager.h"
 #include "UserInterface.h"
 
@@ -43,6 +41,7 @@ private:
   bool m_requestCapture;
   int m_currentRow;
   int m_currentColumn;
+  std::string m_directory;
 
   float m_orthoSize;
 

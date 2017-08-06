@@ -153,7 +153,7 @@ namespace fb
 		char _0x0004[32];
 			DWORD m_viewWidth; //0x0024 
 			DWORD m_viewHeight; //0x0028 
-		char _0x002C[35164];
+		char _0x002C[0x895C];
 			WorldRenderSettings* m_worldRenderSettings; //0x8988 
     };
 

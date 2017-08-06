@@ -40,33 +40,6 @@ void CameraManager::Update(double dt)
   if (!fb::DxRenderer::Singleton()->m_bFullscreenActive)
     return;
 
-  if(GetAsyncKeyState(VK_INSERT) & 0x8000)
-  {
-    m_cameraEnabled = !m_cameraEnabled;
-
-    // Patch to force 3rd person view
-    // Stops game from reading byte that tells if the camera is
-    // in first person view
-    if(m_cameraEnabled)
-      Util::WriteMemory(0x01065540, (const void*)(new BYTE[4]{ 0x90, 0x90, 0x90, 0x90 }), 4);
-    else
-      Util::WriteMemory(0x01065540, (const void*)(new BYTE[4]{ 0x8A, 0x44, 0x8A, 0x08 }), 4);
-
-    while (GetAsyncKeyState(VK_INSERT) & 0x8000)
-      Sleep(100);
-  }
-
-  // Toggle orthographic view
-  if(GetAsyncKeyState(VK_DELETE) & 0x8000)
-  {
-    fb::GameRenderSettings* pSettings = fb::GameRenderer::Singleton()->getSettings();
-    pSettings->m_ForceOrthoViewEnable = !pSettings->m_ForceOrthoViewEnable;
-    pSettings->m_ForceOrthoViewSize = 500.0f;
-
-    while (GetAsyncKeyState(VK_DELETE) & 0x8000)
-      Sleep(100);
-  }
-
   if (!m_cameraEnabled) return;
 
   // Simple camera movement
@@ -94,6 +67,23 @@ void CameraManager::Update(double dt)
     m_camera.finalMatrix._42 += m_camera.finalMatrix._12 * 0.001 * m_camera.movementSpeed;
     m_camera.finalMatrix._43 += m_camera.finalMatrix._13 * 0.001 * m_camera.movementSpeed;
   }
+}
+
+void CameraManager::ToggleCamera()
+{
+    m_cameraEnabled = !m_cameraEnabled;
+
+    // Patch to force 3rd person view
+    // Stops game from reading byte that tells if the camera is
+    // in first person view
+    if (m_cameraEnabled)
+      Util::WriteMemory(0x01065540, (const void*)(new BYTE[4]{ 0x90, 0x90, 0x90, 0x90 }), 4);
+    else
+      Util::WriteMemory(0x01065540, (const void*)(new BYTE[4]{ 0x8A, 0x44, 0x8A, 0x08 }), 4);
+
+    fb::GameRenderSettings* pSettings = fb::GameRenderer::Singleton()->getSettings();
+    pSettings->m_ForceOrthoViewEnable = !pSettings->m_ForceOrthoViewEnable;
+    pSettings->m_ForceOrthoViewSize = 500.0f;
 }
 
 void CameraManager::CameraHook(int pMatrix)

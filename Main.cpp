@@ -1,10 +1,15 @@
 #include "Main.h"
 #include "Hooks.h"
 #include "Util/Log.h"
+#include "Util/Util.hpp"
 #include "FB SDK/Frostbite.h"
 
 #include <wincodec.h>
 #include <string>
+#include <iostream>
+#include <fstream>
+
+#include <DirectXTex.h>
 #pragma comment(lib, "DirectXTex.lib")
 
 //const float ORTHO_SIZE = 500.f;
@@ -25,6 +30,8 @@ void Main::Init(HINSTANCE dllHandle)
   if(hr != S_OK)
     Log::Warning("CoInitialize failed. Result 0x%X", hr);
 
+  CreateDirectory("BF3MinimapGenerator", nullptr);
+
   m_pCameraManager = new CameraManager();
   m_pUserInterface = new UserInterface();
 
@@ -33,6 +40,8 @@ void Main::Init(HINSTANCE dllHandle)
   fb::ClientLevel* pLevel = fb::ClientGameContext::Singleton()->m_level;
   fb::WorldRenderSettings* pRenderSettings = pLevel->m_worldRenderModule->m_worldRenderer->m_worldRenderSettings;
   pRenderSettings->m_shadowmapResolution = 4096;
+  pRenderSettings->m_shadowViewDistance = 500;
+  pRenderSettings->m_shadowmapQuality = 0;
   pLevel->m_vegetationManager->m_settings->m_maxActiveDistance = 4000;
   pLevel->m_vegetationManager->m_settings->m_shadowMeshEnable = 1;
 
@@ -138,7 +147,35 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
     Log::Write("startCell %f : %f", startCell.x, startCell.y);
   }
 
-  fb::DxRenderer* pDxRenderer = fb::DxRenderer::Singleton();
+  std::string directoryMapName = ".\\BF3MinimapGenerator\\" + Util::GetMapName();
+  CreateDirectory(directoryMapName.c_str(), nullptr);
+
+  int mapNumber = 1;
+  std::string finalDirectory = directoryMapName;
+  finalDirectory += "\\map" + std::to_string(mapNumber++);
+
+  while(!CreateDirectory(finalDirectory.c_str(), nullptr))
+  {
+    if(GetLastError() != ERROR_ALREADY_EXISTS)
+    {
+      Log::Error("Failed to create path \"%s\", error code 0x%X", finalDirectory.c_str(), GetLastError());
+      m_startGenerating = false;
+      return;
+    }
+    finalDirectory = directoryMapName + "\\map" + std::to_string(mapNumber++);
+  }
+  m_directory = finalDirectory;
+
+  // Dump info about the map to a file
+  // Contais pixel size, amount of cells in a row/column,
+  // world unit size and center coordinates of each cell.
+
+  std::ofstream infoFile;
+  infoFile.open(m_directory + "\\info.txt");
+
+  infoFile << fb::DxRenderer::Singleton()->m_screenInfo.m_nHeight << std::endl;
+  infoFile << gridAmount << std::endl;
+  infoFile << m_orthoSize << std::endl;
 
   for(m_currentRow = 0; m_currentRow<gridAmount; ++m_currentRow)
   {
@@ -146,15 +183,19 @@ void Main::GenerateMinimap(XMFLOAT2 corner1, XMFLOAT2 corner2)
     {
       m_pCameraManager->GetCamera()->finalMatrix.m[3][0] = startCell.x + m_currentColumn*m_orthoSize;
       m_pCameraManager->GetCamera()->finalMatrix.m[3][2] = startCell.y + m_currentRow*m_orthoSize;
+      infoFile << m_pCameraManager->GetCamera()->finalMatrix.m[3][0] << " ";
+      infoFile << m_pCameraManager->GetCamera()->finalMatrix.m[3][2] << "|";
       Sleep(1000);
       // Request capture in present and wait
       m_requestCapture = true;
       while(m_requestCapture)
         Sleep(100);
     }
+    infoFile << std::endl;
   }
 
   fb::GameTimeSettings::Singleton()->m_timeScale = 1.0f;
+  infoFile.close();
   Log::Write("Done");
   m_startGenerating = false;
 }
@@ -199,8 +240,8 @@ void Main::Capture()
     m_requestCapture = false;
     return;
   }
-
-  std::wstring path = L"grid_" + std::to_wstring(m_currentRow) + L"_" + std::to_wstring(m_currentColumn) + L".tga";
+  std::wstring path(m_directory.begin(), m_directory.end());
+  path += L"\\grid_" + std::to_wstring(m_currentRow) + L"_" + std::to_wstring(m_currentColumn) + L".tga";
   wprintf(L"%s\n", path.c_str());
   hr = SaveToTGAFile(*cropped.GetImage(0, 0, 0), path.c_str());
   //hr = SaveToWICFile(*cropped.GetImage(0,0,0), WIC_FLAGS_IGNORE_SRGB, GUID_ContainerFormatPng, path.c_str(), &GUID_WICPixelFormat128bppRGBFloat);

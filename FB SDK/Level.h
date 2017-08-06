@@ -16,7 +16,7 @@ namespace fb
 	class LevelDescription
 	{
 	public:
-		String m_name;							// 0x00
+    String m_name;							// 0x00
 		String m_description;					// 0x04
 		RefArray<DataContainer> m_components;	// 0x08
 		BYTE m_isCoop;							// 0x0C
@@ -150,8 +150,10 @@ namespace fb
 		//old
 		//char _skipped_0[184]; // PAD(0xB8);0x0000  
        // seems i need to pad 28 bytes less now
-		//char _skipped_0[156]; //0x0000  
-		PAD(0x9C);
+		//char _skipped_0[156]; //0x0000
+      PAD(0x24);
+      LevelData*  m_levelData;
+		PAD(0x74);
 		DebrisManager*    m_debrisManager;
 		PAD(0x4);
         VegetationManager*    m_vegetationManager;
