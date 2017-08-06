@@ -16,7 +16,9 @@ FB SDK (with small changes and additions) - https://www.unknowncheats.me/forum/b
 
 2. Inject .dll into the game
 
-3. Press INSERT to enable freecamera, DELETE for Orthographical view, F1 for UI
+3. F1 to enable the UI and freecamera
+    - Use WASD to move the camera
+    - "Zoom" can be changed by changing the OrthoView size
 
 4. With the UI open and the ortographical view enabled, drag an area for the minimap
     - Note that rendering is depending on camera height. Objects higher than the camera do not render
