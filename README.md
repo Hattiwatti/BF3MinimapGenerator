@@ -24,7 +24,12 @@ FB SDK (with small changes and additions) - https://www.unknowncheats.me/forum/b
     - The resulting images will be limited to window height
 
 5. Press "Generate minimap"
-    - Images will be dumped in .tga format in the Battlefield 3 folder
+    - Images will be dumped in Battlefield 3\BF3MinimapGenerator\LevelName\map#\grid_#_#.tga
+    - A file called info.txt will also be created with the following data
+        - Side length of one cell in pixels
+        - Amount on cells in a row/column
+        - Side length of one cell in world units
+        - Center coordinate of each cell
 
 ### Binaries
 
