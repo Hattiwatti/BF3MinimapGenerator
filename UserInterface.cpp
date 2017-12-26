@@ -67,7 +67,13 @@ void UserInterface::Draw()
       ImGui::InputFloat("Camera Speed", &g_mainHandle->GetCameraManager()->GetCamera()->movementSpeed, 1, 0, 2);
       ImGui::InputFloat("Camera Height", &g_mainHandle->GetCameraManager()->GetCamera()->finalMatrix._42, 5, 0, 0);
       ImGui::InputFloat("OrthoView Size", &fb::GameRenderer::Singleton()->getSettings()->m_ForceOrthoViewSize, 1, 2, 0);
-      ImGui::InputFloat("Resolution", &g_mainHandle->GetOrthoSize(), 1, 2, 0);
+      ImGui::InputFloat("Resolution", g_mainHandle->GetOrthoSize(), 1, 2, 0);
+      if (ImGui::InputInt("Level count", g_mainHandle->GetLevelCount(), 1, 0))
+      {
+        // Minimum value should be 1
+        if (*g_mainHandle->GetLevelCount() <= 0)
+          *g_mainHandle->GetLevelCount() = 1;
+      }
 
       ImGui::Checkbox("Disable fog", &g_mainHandle->GetVisualOverrides().disableFog);
 

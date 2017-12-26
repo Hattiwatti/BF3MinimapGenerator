@@ -55,7 +55,6 @@ void Main::Init(HINSTANCE dllHandle)
 
 //
 // Updates all objects
-// TODO: Add boost clock for delta time (not really needed tho)
 //
 void Main::Update()
 {
@@ -67,8 +66,16 @@ void Main::Update()
       Sleep(100);
   }
 
-  if(m_startGenerating)
-    GenerateMinimap(_corner1, _corner2);
+  if (m_startGenerating)
+  {
+    float orthoBackup = m_orthoSize;
+    for (int i = 0; i < m_levelCount; ++i)
+    {
+      GenerateMinimap(_corner1, _corner2);
+      m_orthoSize = m_orthoSize / 2;
+    }
+    m_orthoSize = orthoBackup;
+  }
 
   m_pCameraManager->Update(0);
   Sleep(1);

@@ -24,7 +24,8 @@ public:
   UserInterface* GetUI() { return m_pUserInterface; }
   HINSTANCE GetDllHandle() { return m_dllHandle; }
 
-  float& GetOrthoSize() { return m_orthoSize; }
+  float* GetOrthoSize() { return &m_orthoSize; }
+  int* GetLevelCount() { return &m_levelCount; }
   VisualOverride& GetVisualOverrides() { return m_visualOverrides; }
 
   void Start(DirectX::XMFLOAT2, DirectX::XMFLOAT2);
@@ -43,6 +44,7 @@ private:
   bool m_startGenerating;
   DirectX::XMFLOAT2 _corner1;
   DirectX::XMFLOAT2 _corner2;
+  int m_levelCount;
 
   bool m_requestCapture;
   int m_currentRow;
@@ -53,7 +55,7 @@ private:
   VisualOverride m_visualOverrides;
 
 public:
-	Main(Main const&)			= delete;
+	Main(Main const&)	= delete;
 	void operator=(Main const&) = delete;
 };
 
