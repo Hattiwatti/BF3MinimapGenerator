@@ -35,4 +35,4 @@ FB SDK (with small changes and additions) - https://www.unknowncheats.me/forum/b
 
 ### Binaries
 
-[Latest binaries](http://files.1337upload.net/BF3MinimapGenerator-db8a7f.zip)
+[Latest binaries](http://files.1337upload.net/BF3MinimapGenerator-ebf8b9.zip)
