@@ -61,7 +61,7 @@ void UserInterface::Draw()
 
   ImGui_ImplDX11_NewFrame();
   {
-    ImGui::SetNextWindowSize(ImVec2(300, 500));
+    ImGui::SetNextWindowSize(ImVec2(300, 400));
     ImGui::Begin("Minimap Generator", nullptr);
     {
       ImGui::InputFloat("Camera Speed", &g_mainHandle->GetCameraManager()->GetCamera()->movementSpeed, 1, 0, 2);
@@ -125,11 +125,11 @@ void UserInterface::Draw()
     float sideLength_World = sideLength * widthRatio;
 
     // How many grids fit? Round to closest
-    float gridSize = sideLength_World / g_mainHandle->GetOrthoSize();
-    gridSize = round(gridSize);
+    float gridSize = sideLength_World / (*g_mainHandle->GetOrthoSize());
+    gridSize = roundf(gridSize);
 
     // Back to screen space
-    sideLength_World = gridSize*g_mainHandle->GetOrthoSize();
+    sideLength_World = gridSize * (*g_mainHandle->GetOrthoSize());
     sideLength = sideLength_World / widthRatio;
 
 
@@ -170,10 +170,10 @@ void UserInterface::Draw()
     {
       XMFLOAT2 center((float)pDxRenderer->m_screenInfo.m_nWidth / 2, (float)pDxRenderer->m_screenInfo.m_nHeight / 2);
 
-      XMFLOAT4 eyeTrans = (XMFLOAT4&)pGameRenderer->m_viewParams.firstPersonTransform.trans;
+      XMFLOAT4 eyeTrans = (XMFLOAT4&)pGameRenderer->m_viewParams.view.m_desc.transform.trans;
 
-      click_World = XMVectorSet(eyeTrans.x + (clickPos.x - center.x)*widthRatio, eyeTrans.z + (clickPos.y - center.y)*heightRatio, 0, 0);
-      drag_World = XMVectorSet(eyeTrans.x + (dragCorner.x - center.x)*widthRatio, eyeTrans.z + (dragCorner.y - center.y)*heightRatio, 0, 0);
+      click_World = XMVectorSet(eyeTrans.x - (clickPos.x - center.x)*widthRatio, eyeTrans.z - (clickPos.y - center.y)*heightRatio, 0, 0);
+      drag_World = XMVectorSet(eyeTrans.x - (dragCorner.x - center.x)*widthRatio, eyeTrans.z - (dragCorner.y - center.y)*heightRatio, 0, 0);
       
       dragged = true;
     }

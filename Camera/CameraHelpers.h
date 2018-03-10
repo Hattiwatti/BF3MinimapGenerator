@@ -29,7 +29,7 @@ struct Camera
   float x, y, z;
   float pitch, yaw, roll;
 
-  float movementSpeed{ 1.0f };
+  float movementSpeed{ 100.0f };
   float rotationSpeed{ 1.0f };
   float rollSpeed{ 0.2f };
 

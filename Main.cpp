@@ -49,6 +49,7 @@ void Main::Init(HINSTANCE dllHandle)
   pMeshSettings->m_globalShadowLodScale = 1000.f;
 
   m_orthoSize = 500.0f;
+  m_levelCount = 1;
 	while (!m_exit)
 		Update();
 }

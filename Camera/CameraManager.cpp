@@ -14,7 +14,7 @@ CameraManager::CameraManager()
   m_camera.x = cameraTransform.trans.x;
   m_camera.y = cameraTransform.trans.y + 10;
   m_camera.z = cameraTransform.trans.z;
-  m_camera.yaw = 0;
+  m_camera.yaw = XMConvertToRadians(180.f);
   m_camera.roll = 0;
   m_camera.pitch = XMConvertToRadians(-90.f);
 
